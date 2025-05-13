@@ -1,0 +1,351 @@
+stop_id,stop_name,stop_lat,stop_lon
+104,Brand at Broadway,34.145624,-118.255177
+105,Brand at California,34.149637,-118.255198
+106,Brand at Chevy Chase,34.133274,-118.25512
+108,Brand at Glenoaks,34.158758,-118.255265
+113,Brand at Milford,34.152692,-118.255207
+114,Brand at Monterey,34.15721,-118.255262
+116,Central at Americana,34.144887,-118.257764
+117,Central at Arden,34.158347,-118.257873
+118,Central at California,34.150143,-118.257809
+119,Central at Chevy Chase,34.133785,-118.257737
+120,Central at Colorado,34.142932,-118.257753
+121,Central at Doran,34.154968,-118.257813
+123,Central at Lomita,34.14062,-118.257773
+124,Central at Los Feliz,34.129047,-118.257705
+125,Central at Magnolia,34.131579,-118.257716
+126,Central at Milford,34.153226,-118.257828
+128,Central at Windsor,34.136925,-118.257742
+130,Brand at Colorado,34.142161,-118.255176
+131,Brand at Doran,34.15431,-118.255203
+132,Brand at Lexington,34.151474,-118.255198
+133,Central at Broadway,34.147073,-118.257785
+134,Central at Laurel,34.127925,-118.257692
+135,Central at Laurel,34.127442,-118.257944
+136,Glendale Transportation Center (GTC),34.12476,-118.25992
+137,Brand at Dryden,34.161227,-118.255278
+138,Stocker at Brand,34.163631,-118.255338
+139,Brand at California,34.15024,-118.254891
+140,Brand at Chevy Chase,34.134195,-118.254787
+148,Central at Arden,34.158195,-118.258127
+149,Central at California,34.149588,-118.258073
+150,Central at Chevy Chase,34.133645,-118.257985
+151,Central at Doran,34.154791,-118.258101
+152,Central at Dryden,34.16107,-118.25699
+153,Central at Lexington,34.151447,-118.258087
+154,Central at Los Feliz,34.128846,-118.257948
+155,Central at Magnolia,34.130449,-118.257956
+156,Central at Milford,34.153055,-118.258084
+157,Central at Stocker,34.163151,-118.25699
+158,Central at Windsor,34.136317,-118.257995
+159,Brand at Broadway,34.146607,-118.254873
+160,Brand at Lexington,34.151948,-118.254894
+161,Brand at Colorado,34.142936,-118.254854
+162,Brand at Milford,34.153268,-118.25489
+163,Brand at Harvard,34.144769,-118.254864
+164,Central at Americana,34.144062,-118.25803
+165,Central at Broadway,34.146291,-118.258047
+166,Central at Lomita,34.140035,-118.258017
+167,Central at Colorado,34.142165,-118.258029
+168,Brand at Fairview,34.160497,-118.254925
+169,Stocker at Brand,34.163744,-118.255493
+170,Broadway at Brand,34.146207,-118.254661
+171,Broadway at Jackson,34.146272,-118.249757
+172,Broadway at Jackson,34.146436,-118.250432
+173,Broadway at Louise,34.146243,-118.252202
+174,Foothill at Alta Canyada,34.209587,-118.211674
+175,Foothill at Alta Canyada,34.209836,-118.211643
+176,Foothill at Beulah,34.203425,-118.198261
+177,Foothill at Briggs,34.219035,-118.23173
+178,Foothill at Briggs,34.219293,-118.231697
+179,Foothill at Chevy Chase,34.20487,-118.201404
+180,Foothill at Angeles Crest Hwy,34.204819,-118.200752
+181,Foothill at Commonwealth,34.202176,-118.19558
+182,Foothill at Commonwealth,34.202668,-118.196078
+183,Foothill at Cornishon,34.205771,-118.20336
+184,Foothill at Cornishon,34.206048,-118.203433
+185,Foothill at Crown,34.196804,-118.183733
+186,Foothill at Crown,34.197183,-118.184037
+187,Foothill at Gould,34.1992,-118.188998
+188,Foothill at Gould,34.199697,-118.189537
+189,Foothill at Hill,34.205516,-118.202278
+190,Foothill at Hillard,34.211144,-118.215091
+191,Foothill at Hillard,34.211496,-118.215229
+192,Foothill at Indiana,34.209047,-118.20993
+193,Foothill at La Canada,34.206778,-118.204989
+194,Foothill at La Canada Plaza,34.215512,-118.224098
+195,Foothill at La Canada Plaza,34.215796,-118.224172
+196,Foothill at Lasheart,34.207423,-118.206984
+197,Foothill at Oakwood,34.201198,-118.193372
+198,Foothill at Oakwood,34.201672,-118.193897
+199,Foothill at Ocean View,34.216862,-118.227181
+200,Foothill at Ocean View,34.217565,-118.228104
+201,Foothill at Palm,34.212637,-118.21793
+202,Foothill at Palm,34.2129,-118.217866
+203,Foothill at Raymond,34.22227,-118.237171
+204,Foothill at Raymond,34.222684,-118.237371
+205,Foothill at Rosemont,34.220853,-118.234867
+206,Foothill at Rosemont,34.221461,-118.235407
+207,Foothill at Vineta,34.19891,-118.187837
+208,Glendale at Broadway,34.146681,-118.24692
+209,Glendale at Broadway (NS),34.14649,-118.24728
+210,Glendale at California,34.149882,-118.245617
+211,Glendale at Doran,34.153388,-118.243641
+212,Glendale at Doran,34.153294,-118.243938
+213,Glendale at Lexington,34.152029,-118.244511
+214,Glendale at Lexington,34.151134,-118.245376
+215,Glendale at Monterey,34.155981,-118.242267
+216,Glendale at Wilson,34.148456,-118.246196
+217,Glendale at Wilson,34.148289,-118.24654
+218,Honolulu at La Crescenta,34.211093,-118.239615
+219,Honolulu at La Crescenta,34.211464,-118.239823
+220,Honolulu at Las Palmas,34.20679,-118.231974
+221,Honolulu at Market,34.205355,-118.22668
+222,Honolulu at Ocean View,34.205605,-118.228658
+223,Honolulu at Orangedale,34.207084,-118.232144
+224,Honolulu at Rosemont,34.208208,-118.234989
+225,Honolulu at Rosemont,34.208823,-118.235572
+226,La Crescenta at Altura,34.21975,-118.239852
+227,La Crescenta at Altura,34.219573,-118.240081
+228,La Crescenta at Mary,34.223555,-118.239838
+229,La Crescenta at Mary,34.223033,-118.240068
+230,La Crescenta at Montrose,34.215716,-118.239867
+231,La Crescenta at Montrose,34.216321,-118.240082
+232,La Crescenta at Piedmont,34.213898,-118.239873
+233,La Crescenta at Piedmont,34.213996,-118.240113
+234,La Crescenta at Prospect,34.221121,-118.239844
+235,La Crescenta at Prospect,34.221684,-118.240072
+236,Oak Grove at Foothill,34.194805,-118.177626
+237,Jet Propulsion Laboratory (JPL),34.197929,-118.175199
+238,Verdugo at Oakwood,34.189351,-118.226726
+239,Verdugo at Bagdad,34.193391,-118.228061
+240,Verdugo at Bara,34.18012,-118.225784
+241,Verdugo at Crestmont,34.174596,-118.225969
+242,Verdugo at Crestmont,34.174329,-118.226232
+243,Verdugo at El Cino,34.201009,-118.227757
+244,Verdugo at Fern,34.182745,-118.2258
+245,Verdugo at Fern,34.182115,-118.225853
+246,Verdugo at Glencoe,34.198201,-118.229111
+247,Verdugo at Glencoe,34.198543,-118.2294
+248,Verdugo at Glorietta,34.187451,-118.225586
+249,Verdugo at Glorietta,34.187713,-118.225788
+250,Verdugo at Honolulu,34.204699,-118.225616
+251,Verdugo at Kirkby,34.171488,-118.226774
+252,Verdugo at Kirkby,34.171453,-118.227028
+253,Verdugo at Ocean View,34.20107,-118.228084
+254,Verdugo at Sunview,34.202486,-118.226753
+255,Verdugo at Sunview,34.202785,-118.226919
+256,Verdugo at Verdugo Loma,34.1702,-118.227215
+257,Montrose at Pennsylvania,34.221014,-118.248302
+258,Verdugo at Opechee,34.180475,-118.226026
+259,Verdugo at Oakwood,34.188802,-118.226509
+260,Montrose at Ramsdell,34.218643,-118.244504
+261,La Canada High School,34.1934,-118.178304
+262,Foothill at Rinetti,34.200627,-118.191565
+263,Montrose at Waltonia,34.206845,-118.22461
+264,Montrose at Ocean View,34.209399,-118.227802
+265,Oak Grove at Foothill,34.194436,-118.17756
+266,Ocean View at Honolulu,34.205774,-118.228137
+267,Verdugo at Honolulu,34.204887,-118.225188
+268,Canada at Towne (Glendale College),34.16858,-118.229172
+269,Harvard at Louise,34.144523,-118.253061
+270,Glendale at Glenoaks,34.158979,-118.239574
+271,Glendale at Glenoaks,34.15909,-118.239868
+272,Glendale at Monterey,34.156457,-118.241556
+273,Glendale at Verdugo,34.160967,-118.236695
+274,Glendale at Verdugo,34.16094,-118.237113
+275,Verdugo at Mountain,34.164637,-118.232722
+276,Verdugo at Calle Vaquero,34.163732,-118.233156
+277,Verdugo at Civic Auditorium (Glendale College),34.166759,-118.230317
+278,Verdugo at Towne (Glendale College),34.168353,-118.22901
+279,Broadway at Adams,34.146167,-118.241582
+280,Broadway at Adams,34.14635,-118.242245
+281,Broadway at Cedar,34.146183,-118.244045
+282,Broadway at Cedar,34.146381,-118.244702
+283,Broadway at Glendale,34.14627,-118.246806
+284,Chevy Chase at Adams,34.133728,-118.241991
+285,Chevy Chase at Adams,34.133892,-118.24223
+286,Chevy Chase at Boynton,34.133595,-118.249243
+287,Chevy Chase at Boynton,34.133761,-118.248918
+288,Chevy Chase at Brand,34.133428,-118.254598
+289,Chevy Chase at Carlton,34.145328,-118.23952
+290,Chevy Chase at Mid Block (La Boice & Boynton),34.13373,-118.245781
+291,Chevy Chase at Mid Block (La Boice & Boynton),34.133896,-118.246522
+292,Chevy Chase at Colorado,34.142467,-118.239507
+293,Chevy Chase at Colorado,34.142278,-118.239735
+294,Chevy Chase at Garfield,34.136267,-118.239493
+295,Chevy Chase at Garfield,34.136385,-118.239721
+296,Chevy Chase at Glendale,34.133454,-118.252158
+297,Chevy Chase at Maple,34.139207,-118.239504
+298,Chevy Chase at Maple,34.138807,-118.239723
+299,Glendale at Broadway (FS),34.146081,-118.247438
+300,Glendale at Palmer,34.132433,-118.252264
+301,Harvard at Isabel,34.144431,-118.248981
+302,Harvard at Isabel,34.14457,-118.249052
+303,Harvard at Louise,34.144379,-118.252777
+304,Broadway at Brand,34.146365,-118.255605
+305,Chevy Chase at Broadway,34.145615,-118.23975
+307,Colorado at Central,34.142442,-118.257504
+308,Pacific at Arden,34.158767,-118.263965
+309,Pacific at Arden,34.158058,-118.26417
+310,Pacific at California,34.149696,-118.264467
+311,Pacific at California,34.149968,-118.264668
+312,Pacific at Colorado,34.142809,-118.264227
+313,Pacific at Doran,34.15425,-118.264518
+314,Pacific at Doran,34.153834,-118.264685
+315,Pacific at Harvard,34.144064,-118.264002
+316,Pacific at Harvard,34.144307,-118.264238
+317,Pacific at Ivy,34.145959,-118.264249
+318,Pacific at Lexington,34.151543,-118.264476
+319,Pacific at Lexington,34.151732,-118.264676
+320,Pacific at Vine,34.140721,-118.264351
+321,Pacific at Wilson,34.147892,-118.264451
+322,Pacific at Wilson,34.148109,-118.264648
+325,Colorado at Columbus,34.142433,-118.261119
+326,Colorado at Pacific,34.142426,-118.263955
+327,Glenwood at Concord (Hoover High School),34.165254,-118.269683
+328,Pacific at Dryden,34.160906,-118.264562
+329,Pacific at Palm,34.161559,-118.264511
+330,Stocker at Pacific,34.163171,-118.265176
+331,Broadway at Carr,34.146098,-118.229779
+332,Colorado at Adams,34.142566,-118.241938
+333,Colorado at Adams,34.142752,-118.241694
+334,Colorado at Brand,34.14249,-118.254563
+335,Colorado at Brand,34.142722,-118.254691
+336,Colorado at Campus,34.142875,-118.2316
+337,Colorado at Chevy Chase,34.142554,-118.239184
+338,Colorado at Chevy Chase,34.142743,-118.239335
+339,Colorado at Columbus,34.142655,-118.2607
+340,Colorado at Everett,34.142581,-118.245697
+341,Colorado at Everett,34.142772,-118.245919
+342,Colorado at Fischer,34.142616,-118.236583
+343,Colorado at Fischer,34.142827,-118.235916
+344,Colorado at Glendale,34.14255,-118.249678
+345,Colorado at Glendale,34.142789,-118.248758
+346,Colorado at Carr Park,34.142869,-118.229319
+347,Colorado at Louise,34.142513,-118.252761
+348,Colorado at Louise,34.142711,-118.252474
+349,Colorado at Verdugo,34.142871,-118.233747
+350,Pacific at Colorado,34.142093,-118.264523
+351,San Fernando at Riverdale,34.13897,-118.267672
+352,Verdugo at Broadway,34.145963,-118.234865
+353,Verdugo at Colorado,34.14335,-118.234133
+354,Pacific at Riverdale,34.138933,-118.264529
+355,Broadway at Sinclair,34.14608,-118.23242
+356,San Fernando at Elk,34.141457,-118.268942
+357,Alameda at Glenoaks,34.176334,-118.29775
+358,Alameda at Glenoaks,34.176553,-118.297808
+359,Glenoaks at Allen,34.173618,-118.293425
+360,Glenoaks at Allen,34.1742,-118.2936
+361,Glenoaks at Concord,34.159734,-118.270505
+362,Glenoaks at Concord,34.160189,-118.271118
+363,Glenoaks at Grandview,34.165125,-118.281764
+364,Glenoaks at Grandview,34.165467,-118.281625
+365,Glenoaks at Graynold,34.162511,-118.278179
+366,Glenoaks at Highland,34.160577,-118.27463
+367,Glenoaks at Highland,34.16117,-118.275124
+368,Glenoaks at Jackson,34.158256,-118.249833
+369,Glenoaks at Jackson,34.158431,-118.250006
+370,Glenoaks at Justin,34.169441,-118.28771
+371,Glenoaks at Justin,34.169761,-118.287496
+372,Glenoaks at Kenilworth,34.159514,-118.267268
+373,Glenoaks at Kenilworth,34.15994,-118.267623
+374,Glenoaks at Pacific,34.159697,-118.264527
+375,Glenoaks at Rosedale,34.16692,-118.283601
+376,Glenoaks at Sonora,34.167952,-118.285644
+377,Glenoaks at Sonora,34.168358,-118.28557
+378,Glenoaks at Thompson,34.172531,-118.291942
+379,Glenoaks at Thompson,34.17258,-118.291378
+380,Glenoaks at Western,34.170816,-118.289578
+381,Glenoaks at Western,34.171446,-118.289805
+382,San Fernando at Alameda,34.174313,-118.299504
+383,San Fernando at Alameda,34.173956,-118.299427
+384,San Fernando at Allen,34.171571,-118.295796
+385,San Fernando at Allen,34.171311,-118.295796
+386,San Fernando at Thompson,34.170228,-118.294305
+387,San Fernando at Western,34.16911,-118.292423
+388,San Fernando at Western,34.168904,-118.292496
+389,Sonora at Lake,34.160805,-118.293913
+390,Stocker at Central,34.163623,-118.257054
+391,Stocker at Central,34.163754,-118.257193
+392,Stocker at Columbus,34.163587,-118.261723
+393,Stocker at Columbus,34.163602,-118.262365
+394,Stocker at Pacific,34.163214,-118.264594
+395,Western at Lake,34.163323,-118.297816
+396,Glenoaks at Graynold,34.163088,-118.27836
+397,Stocker at Pacific,34.163141,-118.264294
+398,Glenoaks at Brand,34.15881,-118.254132
+399,Monterey at Glendale,34.156701,-118.242774
+400,Victory at Western,34.161,-118.299809
+401,Flower at Sonora,34.162987,-118.291669
+402,Monterey at Brand,34.157386,-118.254506
+407,Downtown Burbank Station,34.17806,-118.312149
+408,Flower at Alameda,34.171644,-118.303268
+409,Flower at Alameda,34.171052,-118.302685
+410,Flower at Allen,34.168785,-118.299291
+411,Flower at Allen,34.168704,-118.299463
+412,Flower at Circle Seven,34.159449,-118.286518
+413,Flower at Circle Seven,34.159344,-118.286675
+414,Flower at Davis,34.161752,-118.289655
+415,Flower at Sonora,34.16288,-118.291176
+416,Flower at Verdugo,34.175629,-118.309267
+417,Flower at Verdugo,34.175566,-118.309414
+418,Flower at Western,34.166122,-118.295665
+419,Grandview at Air Way,34.160885,-118.283303
+420,Grandview at Air Way,34.160981,-118.283513
+421,Grandview at Flower,34.158906,-118.285394
+422,Grandview at Flower,34.159009,-118.285586
+425,San Fernando at Broadway,34.146489,-118.271532
+426,San Fernando at Broadway,34.147051,-118.272104
+427,San Fernando at California,34.150083,-118.27363
+428,San Fernando at Chevy Chase,34.133354,-118.262298
+429,San Fernando at Chevy Chase,34.133622,-118.262703
+430,San Fernando at Colorado,34.142607,-118.269788
+431,San Fernando at Fairmont,34.154994,-118.276048
+432,San Fernando at Highland,34.15683,-118.27738
+433,San Fernando at Highland,34.156921,-118.277714
+434,San Fernando at Milford,34.15159,-118.274151
+435,San Fernando at Pacific,34.137118,-118.264862
+436,San Fernando at Pacific,34.136941,-118.265072
+437,San Fernando at Doran,34.15298,-118.275113
+438,San Fernando at Pelanconi,34.159158,-118.27949
+439,San Fernando at Flower,34.159226,-118.279933
+440,Flower at Davis,34.161731,-118.289941
+441,Flower at Western,34.165844,-118.295596
+442,Glendale at California,34.149612,-118.246017
+443,La Crescenta at Montrose,34.215615,-118.240095
+444,San Fernando at Cerritos,34.125067,-118.256434
+445,Central at Glenoaks,34.159647,-118.257745
+446,San Fernando at Brand,34.123341,-118.254646
+447,Glendale at Cerritos,34.126043,-118.253062
+448,Glendale at Chevy Chase,34.133855,-118.25182
+449,Glendale at Colorado,34.14254,-118.249228
+450,Glendale at Harvard,34.14438,-118.24797
+451,Glendale at Lomita,34.140784,-118.250027
+452,Glendale at Maple,34.139261,-118.25067
+453,Glendale at Palmer,34.13211,-118.252096
+454,Glendale at Windsor,34.136971,-118.251308
+455,Glendale at Los Feliz,34.128452,-118.252675
+456,Glendale at San Fernando,34.123164,-118.253738
+457,Pacific at Riverdale,34.138964,-118.264346
+458,San Fernando at Brand,34.123607,-118.254583
+459,San Fernando at Cerritos,34.125863,-118.25695
+460,San Fernando at Los Feliz,34.128794,-118.259481
+461,Chevy Chase at Glendale,34.133628,-118.252423
+462,Glendale at Cerritos,34.125239,-118.253412
+463,Glendale at Chevy Chase,34.133716,-118.25206
+464,Glendale at Colorado,34.1428,-118.24935
+465,Glendale at Harvard,34.144673,-118.248045
+466,Glendale at Lomita,34.141269,-118.250063
+467,Glendale at Los Feliz,34.128259,-118.252928
+468,Glendale at Maple,34.139169,-118.250951
+469,Glendale at Windsor,34.137345,-118.25148
+470,San Fernando at Los Feliz,34.127984,-118.25909
+471,Chevy Chase at Brand,34.133617,-118.254517
+472,Chevy Chase at Central,34.133602,-118.256958
+474,Pacific at San Fernando,34.137488,-118.264339
+475,Central at Lexington,34.152026,-118.257809
+484,San Fernando at Thompson,34.170443,-118.294246
+705,Chevy Chase at Central,34.133426,-118.257457
+727,Ocean View at Montrose,34.20959,-118.228096
+730,Chevy Chase at San Fernando,34.13351075,-118.2622929

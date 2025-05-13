@@ -1,0 +1,443 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,wheelchair_boarding
+1001,1001,"183rd Street and Alburtis Avenue- N/E Co",,33.865822,-118.084187,,,0,,0
+1002,1002,"183rd Street and Alburtis Avenue- S/E Co",,33.865644,-118.083883,,,0,,0
+1003,1003,"183rd Street and Best Plaza- N/W Corner",,33.865777,-118.095114,,,0,,0
+1004,1004,"183rd Street and Los Cerritos Center- S/",,33.86553,-118.094335,,,0,,0
+1005,1005,"183rd Street and Studebaker Road- S/E Co",,33.865494,-118.099091,,,0,,0
+1006,1006,"183rd/Gridley",,33.865801,-118.091825,,,0,,0
+1007,1007,"Adelfa and Santa Gertrudes",,33.894324,-118.001019,,,0,,0
+1008,1008,"Alondra Boulevard and Elmcroft Avenue- N",,33.887681,-118.095826,,,0,,0
+1009,1009,"Alondra Boulevard opposite Elmcroft Aven",,33.887432,-118.095207,,,0,,0
+1010,1010,"Alondra Boulevard and Graystone Avenue",,33.887696,-118.093853,,,0,,0
+1011,1011,"Alondra Boulevard and Gridley Road- N/W ",,33.887705,-118.091418,,,0,,0
+1012,1012,"Alondra Boulevard and Madris Avenue - N/",,33.887827,-118.069332,,,0,,0
+1013,1013,"Alondra Boulevard and Madris Avenue",,33.887567,-118.069674,,,0,,0
+1014,1014,"Alondra Boulevard and Maidstone Avenue-N",,33.887739,-118.086653,,,0,,0
+1015,1015,"Alondra/Maidstone",,33.887483,-118.086502,,,0,,0
+1016,1016,"Alondra Boulevard and Mc Nab Avenue- N/W",,33.888776,-118.113655,,,0,,0
+1017,1017,"Alondra Boulevard and Mc Nab Avenue- S/E",,33.888304,-118.113241,,,0,,0
+1018,1018,"Alondra Boulevard and Piuma Avenue- N/W ",,33.887771,-118.106344,,,0,,0
+1019,1019,"Alondra Boulevard and Piuma Avenue- S/W ",,33.887503,-118.106277,,,0,,0
+1020,1020,"Alondra Boulevard and Studebaker Road- N",,33.887664,-118.099589,,,0,,0
+1021,1021,"Alondra Boulevard and Studebaker Road- S",,33.887409,-118.099461,,,0,,0
+1022,1022,"Alondra Boulevard opposite Gridley Road",,33.887461,-118.09083,,,0,,0
+1023,1023,"Alondra Boulevard opposite Leibacher Ave",,33.887385,-118.102848,,,0,,0
+1024,1024,"Beach Boulevard and Fashion Square Lane-",,33.919717,-117.967546,,,0,,0
+1025,1025,"Beverley Boulevard and Citrus Avenue",,33.988228,-118.046145,,,0,,0
+1026,1026,"Beverley Boulevard and Floral Drive",,33.991674,-118.050489,,,0,,0
+1027,1027,"Beverley Boulevard and Pickering Avenue",,33.988231,-118.042369,,,0,,0
+1028,1028,"Beverly Boulevard and Citrus Avenue",,33.988071,-118.04582,,,0,,0
+1029,1029,"Beverly Boulevard and Floral Drive",,33.991609,-118.050689,,,0,,0
+1030,1030,"Beverly Boulevard and Greenleaf Avenue",,33.98801,-118.037248,,,0,,0
+1031,1031,"Beverly Boulevard and Greenleaf Avenue",,33.988069,-118.037558,,,0,,0
+1032,1032,"Beverly Boulevard and Norwalk Boulevard",,33.998238,-118.055192,,,0,,0
+1033,1033,"Beverly Boulevard and Palm Avenue",,33.997761,-118.0545,,,0,,0
+1034,1034,"Beverly Boulevard and Pickering Avenue",,33.988068,-118.041812,,,0,,0
+1035,1035,"Bloomfield Avenue and Alondra Boulevard",,33.887963,-118.064256,,,0,,0
+1036,1036,"Bloomfield Avenue and Alondra Boulevard",,33.888008,-118.063959,,,0,,0
+1037,1037,"Bloomfield Avenue and Civic Center Drive",,33.914975,-118.064359,,,0,,0
+1038,1038,"Bloomfield Avenue and Anabella Street",,33.914077,-118.064766,,,0,,0
+1039,1039,"Bloomfield Avenue and Dante Street",,33.910642,-118.06473,,,0,,0
+1040,1040,"Bloomfield Avenue and Excelsior Drive",,33.895234,-118.064226,,,0,,0
+1041,1041,"Bloomfield Avenue and Excelsior Drive",,33.895571,-118.063938,,,0,,0
+1042,1042,"Bloomfield Avenue and Florence Avenue",,33.935078,-118.064152,,,0,,0
+1043,1043,"Bloomfield Avenue and Florence Avenue",,33.935838,-118.063835,,,0,,0
+1044,1044,"Bloomfield Avenue and Hacienda Drive",,33.913483,-118.064474,,,0,,0
+1045,1045,"Bloomfield Avenue and Lakeland Road",,33.93121,-118.064127,,,0,,0
+1046,1046,"Bloomfield Avenue and Lakeland Road",,33.931542,-118.063829,,,0,,0
+1047,1047,"Bloomfield Avenue at Hospital",,33.910177,-118.064445,,,0,,0
+1048,1048,"Bloomfield/Imperial",,33.916768,-118.06407,,,0,,0
+1049,1049,"Bloomfield/Imperial",,33.917474,-118.0638,,,0,,0
+1050,1050,"Bloomfield/Telegraph",,33.941646,-118.063844,,,0,,0
+1051,1051,"Bloomfield/Telegraph",,33.942083,-118.064159,,,0,,0
+1052,1052,"Civic Center Drive and Bloomfield Avenue",,33.914677,-118.064916,,,0,,0
+1053,1053,"Civic Center Drive and Silverbow Avenue ",,33.91422,-118.066028,,,0,,0
+1054,1054,"Civic Center Drive and Volunteer Avenue ",,33.913657,-118.068477,,,0,,0
+1055,1055,"Civic Center Drive and Volunteer Avenue-",,33.913841,-118.068526,,,0,,0
+1056,1056,"Civic Center Drive at AMC Theaters",,33.914096,-118.071637,,,0,,0
+1057,1057,"Civic Center Drive opposite AMC Theaters",,33.914273,-118.070931,,,0,,0
+1059,1059,"Clark Avenue and Alondra Boulevard - S/E",,33.888998,-118.133885,,,0,,0
+1060,1060,"Clark Avenue and Ives Street - N/E  Corn",,33.894483,-118.133918,,,0,,0
+1061,1061,"Clark Avenue and Linden Street - N/E  Co",,33.891665,-118.133901,,,0,,0
+1062,1062,"Clark Avenue and Oak Street at Youth Emp",,33.883957,-118.133855,,,0,,0
+1063,1063,"Clark Avenue and Somerset Boulevard- N/E",,33.896779,-118.133929,,,0,,0
+1064,1064,"Clark/Rosecrans",,33.903836,-118.133963,,,0,,0
+1065,1065,"Durfee Avenue and Michael Hunt Drive",,34.040754,-118.035721,,,0,,0
+1066,1066,"Durfee Avenue and Michael Hunt Drive",,34.040925,-118.035993,,,0,,0
+1067,1067,"Durfee Avenue and Thienes Avenue",,34.043311,-118.032689,,,0,,0
+1068,1068,"Durfee Avenue and Thienes Avenue",,34.043477,-118.03285,,,0,,0
+1069,1069,"El Monte Station - Lower Bay 3/4",,34.072283,-118.045078,,,0,,0
+1071,1071,"Firestone Boulevard and Paddison Avenue",,33.910885,-118.078656,,,0,,0
+1072,1072,"Firestone Boulevard and Paddison Avenue",,33.911326,-118.07896,,,0,,0
+1073,1073,"Firestone Boulevard and Pioneer Boulevar",,33.912327,-118.08136,,,0,,0
+1074,1074,"Firestone Boulevard and Pioneer Boulevar",,33.913313,-118.082643,,,0,,0
+1075,1075,"Florence Avenue and Fulton Wells Avenue-",,33.935188,-118.076666,,,0,,0
+1076,1076,"Florence Avenue and Norwalk Boulevard- N",,33.935447,-118.073427,,,0,,0
+1077,1077,"Florence Avenue at Kid Zone",,33.935427,-118.089406,,,0,,0
+1078,1078,"Florence/Orr & Day",,33.935178,-118.088555,,,0,,0
+1079,1079,"Florence Avenue and Pioneer Boulevard- S",,33.935181,-118.08148,,,0,,0
+1080,1080,"Florence Avenue and Ringwood Avenue- S/W",,33.935221,-118.084657,,,0,,0
+1081,1081,"Florence Avenue at Lake Center Athletic ",,33.935422,-118.085243,,,0,,0
+1082,1082,"Orr and Day/Florence",,33.935824,-118.09042,,,0,,0
+1083,1083,"Florence/Pioneer",,33.935442,-118.082188,,,0,,0
+1084,1084,"Flower Street and Ardmore Avenue - N/E  ",,33.88216,-118.128932,,,0,,0
+1085,1085,"Flower Street and Civic Center Drive- N/",,33.882184,-118.12208,,,0,,0
+1086,1086,"Flower/Bellflower",,33.882168,-118.126061,,,0,,0
+1087,1087,"Foster Road and Bechard Avenue - S/W Cor",,33.909511,-118.062525,,,0,,0
+1088,1088,"Foster Road and Bechard Avenue (Soropt. ",,33.909646,-118.062607,,,0,,0
+1089,1089,"Foster Road and Greenstone Avenue",,33.909673,-118.058513,,,0,,0
+1090,1090,"Foster Road and Greenstone Avenue -S/E C",,33.909538,-118.058182,,,0,,0
+1091,1091,"Foster Road and San Antonio Drive- S/W C",,33.907614,-118.076776,,,0,,0
+1092,1092,"Foster Road and Shoemaker Avenue - S/W C",,33.909558,-118.055802,,,0,,0
+1093,1093,"Foster Road and Stanstead Avenue -S/W Co",,33.909505,-118.064177,,,0,,0
+1095,1095,"C Line Station",,33.913358,-118.103808,,,0,,0
+1098,1098,"Greenleaf Avenue and Broadway",,33.98604,-118.037248,,,0,,0
+1099,1099,"Greenleaf Avenue and Broadway",,33.986124,-118.037457,,,0,,0
+1100,1100,"Greenleaf Avenue and Hadley Street",,33.982944,-118.037249,,,0,,0
+1101,1101,"Hadley Street and Friends Avenue",,33.982812,-118.033668,,,0,,0
+1102,1102,"Hadley Street and Painter Avenue",,33.982614,-118.032956,,,0,,0
+1103,1103,"Hadley Street and Washington Boulevard",,33.98262,-118.035278,,,0,,0
+1104,1104,"Idaho Street opposite Las Lomas",,33.921625,-117.959303,,,0,,0
+1105,1105,"Imperial Highway and 12501 Imperial High",,33.917271,-118.067055,,,0,,0
+1106,1106,"Imperial Highway and 1st Avenue- N/W Cor",,33.917444,-117.986022,,,0,,0
+1107,1107,"Imperial Highway and 1st Avenue- S/W Cor",,33.917206,-117.985781,,,0,,0
+1108,1108,"Imperial Highway and Beach Boulevard- N/",,33.917482,-117.96858,,,0,,0
+1109,1109,"Imperial Highway and Biola Avenue- S/W C",,33.917026,-118.019231,,,0,,0
+1110,1110,"Imperial Highway and Bloomfield Avenue- ",,33.917277,-118.063511,,,0,,0
+1111,1111,"Imperial Highway and Bloomfield Avenue- ",,33.917031,-118.063411,,,0,,0
+1112,1112,"Imperial Highway and Burgess Avenue- N/W",,33.91724,-118.024187,,,0,,0
+1113,1113,"Imperial Highway and Burgess Avenue- S/W",,33.917,-118.024189,,,0,,0
+1114,1114,"Imperial Highway and Carmenita Road- N/E",,33.917118,-118.046454,,,0,,0
+1115,1115,"Imperial Highway and Carmenita Road- S/W",,33.916865,-118.047234,,,0,,0
+1116,1116,"Imperial Highway opposite Fairford Avenu",,33.917227,-118.094597,,,0,,0
+1117,1117,"Imperial Highway and Fairford Avenue-S/E",,33.91697,-118.09453,,,0,,0
+1118,1118,"Imperial Highway and Grovedale Drive- N/",,33.917425,-117.988567,,,0,,0
+1119,1119,"Imperial Highway and Grovedale Drive- S/",,33.917188,-117.989015,,,0,,0
+1120,1120,"Imperial Highway and Hoxie Avenue- S/E C",,33.916342,-118.103323,,,0,,0
+1121,1121,"Imperial Highway opposite Jersey Avenue",,33.916979,-118.086466,,,0,,0
+1122,1122,"Imperial Highway and Jersey Avenue- N/E ",,33.91721,-118.08595,,,0,,0
+1123,1123,"Imperial Highway and La Mirada Boulevard",,33.91732,-118.011448,,,0,,0
+1124,1124,"Imperial Highway and La Mirada Boulevard",,33.917071,-118.011445,,,0,,0
+1125,1125,"Imperial Highway and Leffingwell Road - ",,33.91682,-118.049748,,,0,,0
+1126,1126,"Imperial Highway and Leffingwell Road- N",,33.917105,-118.049812,,,0,,0
+1128,1128,"Imperial Highway and Market Place (West)",,33.917484,-117.962654,,,0,,0
+1129,1129,"Imperial Highway and Meyer Road- N/W Cor",,33.917186,-118.034523,,,0,,0
+1130,1130,"Imperial Highway and Meyer Road- S/W Cor",,33.916944,-118.034084,,,0,,0
+1131,1131,"Imperial Highway and Ocaso Avenue- N/W C",,33.916634,-118.003529,,,0,,0
+1132,1132,"Imperial Highway and Ocaso Avenue- S/W C",,33.916409,-118.003385,,,0,,0
+1133,1133,"Imperial Highway and Orr and Day Road",,33.916974,-118.09079,,,0,,0
+1134,1134,"Imperial Highway and Oxford Drive- N/E C",,33.917388,-117.998781,,,0,,0
+1135,1135,"Imperial Highway and Oxford Drive- S/W C",,33.91713,-117.999129,,,0,,0
+1136,1136,"Imperial Highway and Paddison Avenue- N/",,33.91727,-118.076615,,,0,,0
+1137,1137,"Imperial Highway and Paddison Avenue- S/",,33.916962,-118.077197,,,0,,0
+1138,1138,"Imperial Highway and Shoemaker Avenue- N",,33.917178,-118.054974,,,0,,0
+1139,1139,"Imperial Highway and Shoemaker Avenue- S",,33.916913,-118.054857,,,0,,0
+1140,1140,"Imperial Highway and Springview Drive- N",,33.917256,-118.020442,,,0,,0
+1141,1141,"Imperial Highway and Studebaker Road- N/",,33.917219,-118.100004,,,0,,0
+1142,1142,"Imperial Highway and Studebaker Road-S/E",,33.91694,-118.09867,,,0,,0
+1143,1143,"Imperial Highway and Tigrina Avenue- N/E",,33.917465,-117.98053,,,0,,0
+1144,1144,"Imperial Highway and Tigrina Avenue- S/W",,33.917229,-117.980998,,,0,,0
+1145,1145,"Imperial Highway and Valley View Avenue-",,33.917214,-118.02977,,,0,,0
+1146,1146,"Imperial Highway and Valley View Avenue-",,33.916963,-118.029779,,,0,,0
+1147,1147,"Imperial Highway and Volunteer Avenue- N",,33.917259,-118.069018,,,0,,0
+1148,1148,"Imperial Highway and Volunteer Avenue- S",,33.917018,-118.068395,,,0,,0
+1149,1149,"Beach/Imperial",,33.91779,-117.967741,,,0,,0
+1150,1150,"Imperial/Firestone",,33.917221,-118.090745,,,0,,0
+1151,1151,"Imperial/Idaho",,33.917482,-117.959928,,,0,,0
+1152,1152,"Imperial/Norwalk",,33.916998,-118.074493,,,0,,0
+1153,1153,"Imperial/Norwalk",,33.917278,-118.074008,,,0,,0
+1154,1154,"Imperial/Norwalk",,33.916953,-118.071613,,,0,,0
+1155,1155,"Imperial/Pioneer",,33.917244,-118.082594,,,0,,0
+1156,1156,"Imperial/Pioneer",,33.916949,-118.082136,,,0,,0
+1157,1157,"Imperial/Santa Gertrudes",,33.917403,-117.994917,,,0,,0
+1158,1158,"Imperial/Santa Gertrudes",,33.91715,-117.994723,,,0,,0
+1159,1159,"La Mirada Boulevard and Ocaso Avenue S/E",,33.891737,-118.003622,,,0,,0
+1160,1160,"Lakeland Road and Arlee Avenue - S/W Cor",,33.931602,-118.08076,,,0,,0
+1161,1161,"Lakeland Road and Fulton Wells Avenue",,33.931752,-118.076567,,,0,,0
+1162,1162,"Lakeland Road and Lakeland Road Villa",,33.931745,-118.074223,,,0,,0
+1163,1163,"Lakeland Road and Paddison Avenue - S/E ",,33.931617,-118.076883,,,0,,0
+1164,1164,"Lakeland Road and Pioneer Boulevard",,33.931738,-118.081462,,,0,,0
+1165,1165,"Lakeland Road opposite Bombardier Avenue",,33.931736,-118.080033,,,0,,0
+1166,1166,"Lambert Road and Beach Boulevard- S/E Co",,33.924476,-117.967263,,,0,,0
+1167,1167,"Lambert Road and Idaho Street- S/W Corne",,33.924454,-117.95942,,,0,,0
+1168,1168,"Lambert Road and Santa Fe Springs Road",,33.964036,-118.046222,,,0,,0
+1169,1169,"Lambert Road and Santa Fe Springs Road",,33.964264,-118.046081,,,0,,0
+1170,1170,"Lambert Road and Washington Boulevard",,33.966999,-118.048047,,,0,,0
+1171,1171,"Lambert Road and Whitebrook Drive- S/E C",,33.924463,-117.962079,,,0,,0
+1172,1172,"Mar Vista Street and Washington Boulevar",,33.973539,-118.034665,,,0,,0
+1173,1173,"Mar Vista Street/Greenleaf",,33.973784,-118.037139,,,0,,0
+1174,1174,"Mar Vista/Greenleaf",,33.973567,-118.03774,,,0,,0
+1175,1175,"Metrolink Station",,33.916536,-118.060726,,,0,,0
+1176,1176,"Norwalk Boulevard and 161st Street  (Cor",,33.884191,-118.072919,,,0,,0
+1177,1177,"Norwalk Boulevard and Aegean Street",,33.923278,-118.072508,,,0,,0
+1178,1178,"Norwalk Boulevard and Aegean Street- S/W",,33.923505,-118.072792,,,0,,0
+1179,1179,"Norwalk Boulevard and Aldrich Street- N/",,33.983526,-118.07053,,,0,,0
+1180,1180,"Norwalk Boulevard and Balfour Street- N/",,33.979909,-118.073792,,,0,,0
+1181,1181,"Norwalk Boulevard and Beverly Boulevard-",,33.997904,-118.056031,,,0,,0
+1182,1182,"Norwalk Boulevard and Beverly Boulevard-",,33.99814,-118.056104,,,0,,0
+1183,1183,"Norwalk Boulevard and Bexley Drive- N/W ",,33.986287,-118.067824,,,0,,0
+1184,1184,"Norwalk Boulevard and Bexley Drive- S/E ",,33.985792,-118.067934,,,0,,0
+1185,1185,"Norwalk Boulevard and Cedarcrest Drive",,33.884537,-118.072682,,,0,,0
+1186,1186,"Norwalk Boulevard and Choisser Street",,33.976174,-118.075812,,,0,,0
+1187,1187,"Norwalk Boulevard and Civic Center Drive",,33.914479,-118.072732,,,0,,0
+1188,1188,"Norwalk Boulevard and Civic Center Drive",,33.9145,-118.072423,,,0,,0
+1189,1189,"Norwalk Boulevard and Coolhurst Drive- S",,33.980619,-118.073438,,,0,,0
+1190,1190,"Norwalk Boulevard and Crewe Street- N/W ",,33.920908,-118.072779,,,0,,0
+1192,1192,"Norwalk Boulevard and Florence Avenue- S",,33.934951,-118.07286,,,0,,0
+1193,1193,"Norwalk Boulevard and Hermes Street- N/W",,33.931175,-118.072851,,,0,,0
+1194,1194,"Norwalk Boulevard and Lakeland Road- S/E",,33.931461,-118.072564,,,0,,0
+1195,1195,"Norwalk Boulevard and Mines Boulevard- N",,33.98271,-118.070979,,,0,,0
+1196,1196,"Norwalk Boulevard and Monte Vista Drive-",,33.995286,-118.058627,,,0,,0
+1197,1197,"Norwalk Boulevard and Oracle Street- S/W",,33.928649,-118.072833,,,0,,0
+1198,1198,"Norwalk Boulevard and Orange Grove Avenu",,33.995953,-118.058261,,,0,,0
+1199,1199,"Norwalk Boulevard and Orange Street- N/W",,33.992401,-118.061747,,,0,,0
+1200,1200,"Norwalk Boulevard and Orange Street- S/E",,33.991944,-118.061942,,,0,,0
+1201,1201,"Norwalk Boulevard and Paddison Avenue Sq",,33.9192,-118.072772,,,0,,0
+1202,1202,"Norwalk Boulevard and Reichling Lane- S/",,33.983801,-118.069898,,,0,,0
+1203,1203,"Norwalk Boulevard and Slauson Avenue- N/",,33.965091,-118.070516,,,0,,0
+1204,1204,"Norwalk Boulevard and Slauson Avenue- N/",,33.96502,-118.070804,,,0,,0
+1205,1205,"Norwalk Boulevard and Tina Street - S/W ",,33.925652,-118.072805,,,0,,0
+1206,1206,"Norwalk Boulevard and Tina Street- N/W C",,33.926022,-118.072805,,,0,,0
+1207,1207,"Norwalk Boulevard and Waddell Street- N/",,33.968854,-118.071404,,,0,,0
+1208,1208,"Norwalk Boulevard and Waddell Street- N/",,33.969007,-118.071855,,,0,,0
+1209,1209,"Norwalk Boulevard and Wakeman Street- Sw",,33.967208,-118.070814,,,0,,0
+1210,1210,"Norwalk Boulevard at Metro Hospital Main",,33.926352,-118.072529,,,0,,0
+1211,1211,"Norwalk Boulevard opposite Crewe Street",,33.920532,-118.07249,,,0,,0
+1212,1212,"Norwalk Boulevard opposite Oracle Street",,33.928661,-118.072541,,,0,,0
+1213,1213,"NSQ",,33.90499,-118.082785,,,0,,0
+1214,1214,"Norwalk/166th",,33.880286,-118.073168,,,0,,0
+1215,1215,"Norwalk/Alondra",,33.887552,-118.072541,,,0,,0
+1216,1216,"Norwalk/Alondra",,33.887282,-118.072987,,,0,,0
+1217,1217,"Norwalk/Imperial",,33.917579,-118.072458,,,0,,0
+1218,1218,"Norwalk/Imperial (Ihop)",,33.91629,-118.072751,,,0,,0
+1219,1219,"Norwalk/Washington",,33.972816,-118.074035,,,0,,0
+1220,1220,"Norwalk/Washington",,33.971816,-118.073778,,,0,,0
+1221,1221,"Norwalk/Whittier",,33.990062,-118.063778,,,0,,0
+1222,1222,"Norwalk/Whittier",,33.989713,-118.064373,,,0,,0
+1223,1223,"Orr and Day Road and Clarkman Street",,33.939466,-118.090449,,,0,,0
+1224,1224,"Orr and Day Road and Clarkman Street- N/",,33.939509,-118.090735,,,0,,0
+1225,1225,"Orr and Day Road and Davenrich Street",,33.945695,-118.090465,,,0,,0
+1226,1226,"Orr and Day Road and Davenrich Street- S",,33.945599,-118.090764,,,0,,0
+1227,1227,"Orr and Day Road and Dunning Street",,33.942771,-118.090457,,,0,,0
+1228,1228,"Orr and Day Road and Dunning Street- N/W",,33.943247,-118.090751,,,0,,0
+1229,1229,"Orr and Day Road and Whiteland Street- S",,33.95244,-118.087128,,,0,,0
+1230,1230,"Orr and Day Road and Whiteland Street- S",,33.952479,-118.087427,,,0,,0
+1231,1231,"Orr and Day/Telegraph",,33.948425,-118.089494,,,0,,0
+1232,1232,"Orr and Day/Telegraph",,33.948378,-118.089857,,,0,,0
+1233,1233,"Painter Avenue and Mar Vista Street",,33.973683,-118.032799,,,0,,0
+1234,1234,"Painter Avenue and Penn Street",,33.975156,-118.032791,,,0,,0
+1235,1235,"Painter Avenue and Penn Street",,33.975235,-118.032565,,,0,,0
+1236,1236,"Painter Avenue and Philadelphia Street",,33.979261,-118.032787,,,0,,0
+1237,1237,"Painter Avenue and Philadelphia Street",,33.979525,-118.032541,,,0,,0
+1238,1238,"Painter Avenue and Wardman Street",,33.977176,-118.032556,,,0,,0
+1239,1239,"Painter Avenue and Wardman Street",,33.977388,-118.032779,,,0,,0
+1240,1240,"Peck Road and Durfee Avenue",,34.035878,-118.038599,,,0,,0
+1241,1241,"Peck Road and Durfee Avenue",,34.036622,-118.038334,,,0,,0
+1242,1242,"Peck Road and Fineview Street",,34.051356,-118.030729,,,0,,0
+1243,1243,"Peck Road and Fineview Street",,34.052085,-118.030495,,,0,,0
+1244,1244,"Peck Road and Garvey Avenue",,34.063126,-118.03041,,,0,,0
+1245,1245,"Peck Road and Garvey Avenue",,34.063192,-118.030616,,,0,,0
+1246,1246,"Peck Road and Klingerman Street",,34.056314,-118.030429,,,0,,0
+1247,1247,"Peck Road and Meeker Avenue",,34.065273,-118.030597,,,0,,0
+1248,1248,"Peck Road and Meeker Avenue",,34.065733,-118.030161,,,0,,0
+1249,1249,"Peck Road and Mountain View Road",,34.05569,-118.030735,,,0,,0
+1250,1250,"Peck Road and Rooks Road",,34.030499,-118.037443,,,0,,0
+1251,1251,"Peck Road and Rooks Road",,34.030567,-118.037136,,,0,,0
+1252,1252,"Peck Road/Elliott",,34.058369,-118.030719,,,0,,0
+1253,1253,"Peck/Elliott",,34.058807,-118.030409,,,0,,0
+1254,1254,"Pickering Avenue and Mar Vista Street",,33.97343,-118.042166,,,0,,0
+1255,1255,"Pickering Avenue and Mar Vista Street",,33.973522,-118.041992,,,0,,0
+1256,1256,"Pickering Avenue and Walnut Street",,33.971738,-118.041997,,,0,,0
+1257,1257,"Pickering Avenue and Walnut Street",,33.971818,-118.042156,,,0,,0
+1258,1258,"Pickering Avenue and Whittier Boulevard",,33.969045,-118.041998,,,0,,0
+1259,1259,"Pickering Avenue and Whittier Boulevard",,33.969244,-118.04219,,,0,,0
+1260,1260,"Pioneer Boulevard and 163rd Street- S/E ",,33.883482,-118.082255,,,0,,0
+1261,1261,"Pioneer Boulevard and 166th Street- N/E ",,33.880925,-118.082227,,,0,,0
+1262,1262,"Pioneer Boulevard and 166th Street- N/W ",,33.880583,-118.082519,,,0,,0
+1263,1263,"Pioneer Boulevard and 178th Street - N/E",,33.869168,-118.082098,,,0,,0
+1264,1264,"Pioneer Boulevard and 183rd Street- N/W ",,33.865921,-118.082358,,,0,,0
+1265,1265,"Pioneer Boulevard and Alondra Boulevard-",,33.887879,-118.082606,,,0,,0
+1266,1266,"Pioneer Boulevard and Artesia Boulevard-",,33.8733,-118.082142,,,0,,0
+1267,1267,"Pioneer Boulevard and Artesia Boulevard-",,33.873415,-118.082449,,,0,,0
+1268,1268,"Pioneer Boulevard and Bluejay Lane- S/E ",,33.959463,-118.084396,,,0,,0
+1269,1269,"Pioneer Boulevard and Broaded Street- N/",,33.957923,-118.085002,,,0,,0
+1270,1270,"Pioneer Boulevard and Charlesworth Road-",,33.956074,-118.085619,,,0,,0
+1271,1271,"Pioneer Boulevard and Cheshire Street- N",,33.890746,-118.082332,,,0,,0
+1272,1272,"Pioneer Boulevard and Excelsior Drive- N",,33.89518,-118.082384,,,0,,0
+1273,1273,"Pioneer Boulevard and Excelsior Drive-S/",,33.894637,-118.082664,,,0,,0
+1275,1275,"Pioneer Boulevard and Foster Road- S/E C",,33.909527,-118.082282,,,0,,0
+1277,1277,"Hindu Temple (15311 Pioneer Boulevard)",,33.892307,-118.082644,,,0,,0
+1278,1278,"Pioneer Boulevard and Lindale- S/E Corne",,33.900043,-118.082432,,,0,,0
+1279,1279,"Pioneer Boulevard and Lindale-S/W Corner",,33.900132,-118.082724,,,0,,0
+1280,1280,"Pioneer Boulevard and Los Nietos Road- S",,33.961512,-118.083461,,,0,,0
+1281,1281,"Pioneer Boulevard and Mapledale Street- ",,33.898705,-118.08242,,,0,,0
+1282,1282,"Pioneer Boulevard and Mapledale Street- ",,33.898239,-118.082673,,,0,,0
+1283,1283,"Pioneer Boulevard at Neighborhood Center",,33.958343,-118.085158,,,0,,0
+1284,1284,"Pioneer Boulevard and Orange Street- S/E",,33.905088,-118.082498,,,0,,0
+1285,1285,"Pioneer Boulevard and Slauson Avenue- S/",,33.966715,-118.082233,,,0,,0
+1286,1286,"Pioneer Boulevard and Slauson Avenue- S/",,33.966704,-118.082575,,,0,,0
+1288,1288,"Pioneer Boulevard at Artesia Boulevard O",,33.868873,-118.082429,,,0,,0
+1289,1289,"Pioneer Boulevard at Little Lake Park",,33.933291,-118.081689,,,0,,0
+1290,1290,"Pioneer Boulevard opposite 163rd Street",,33.883148,-118.082538,,,0,,0
+1291,1291,"Pioneer Boulevard opposite Bluejay Lane",,33.959487,-118.084692,,,0,,0
+1292,1292,"Pioneer Boulevard opposite Cheshire Stre",,33.890168,-118.082615,,,0,,0
+1293,1293,"Pioneer Boulevard opposite Los Nietos Ro",,33.961579,-118.083747,,,0,,0
+1294,1294,"Pioneer/Alondra",,33.887887,-118.082296,,,0,,0
+1295,1295,"Pioneer/Florence",,33.934994,-118.081965,,,0,,0
+1296,1296,"Pioneer/Rosecrans",,33.90299,-118.082469,,,0,,0
+1297,1297,"Pioneer/Rosecrans",,33.901557,-118.08275,,,0,,0
+1298,1298,"Ramona Boulevard and Lexington Avenue",,34.071878,-118.03974,,,0,,0
+1299,1299,"Ramona Boulevard and Lexington Avenue",,34.072073,-118.040078,,,0,,0
+1300,1300,"Ramona Boulevard and Santa Anita Avenue",,34.071863,-118.041412,,,0,,0
+1301,1301,"Ramona Boulevard and Tyler Avenue",,34.071961,-118.035637,,,0,,0
+1302,1302,"Ramona Boulevard and Tyler Avenue",,34.072122,-118.036373,,,0,,0
+1303,1303,"Ramona Boulevard and Valley Boulevard",,34.072256,-118.033126,,,0,,0
+1304,1304,"Ramona Boulevard and Valley Boulevard",,34.072397,-118.033386,,,0,,0
+1306,1306,"Rosecrans and Pioneer",,33.90231,-118.083158,,,0,,0
+1307,1307,"Rosecrans and Pioneer",,33.902069,-118.082131,,,0,,0
+1308,1308,"Rosecrans Avenue and Adelfa Drive N/E Co",,33.898983,-118.004863,,,0,,0
+1309,1309,"Rosecrans Avenue and Adelfa Drive S/W Co",,33.898703,-118.005421,,,0,,0
+1310,1310,"Rosecrans Avenue and Ardis Avenue - S/E ",,33.902985,-118.128898,,,0,,0
+1311,1311,"Rosecrans Avenue and Bellflower Boulevar",,33.901855,-118.124929,,,0,,0
+1312,1312,"Rosecrans Avenue and Biola Avenue N/E Co",,33.900588,-118.01897,,,0,,0
+1313,1313,"Rosecrans Avenue and Biola Avenue S/W Co",,33.900616,-118.019597,,,0,,0
+1314,1314,"Rosecrans Avenue opposite S Bloomfield A",,33.902433,-118.064813,,,0,,0
+1315,1315,"Rosecrans Avenue and Bloomfield Avenue S",,33.902188,-118.064446,,,0,,0
+1316,1316,"Rosecrans Avenue and Cabell - S/E  Corne",,33.901879,-118.121996,,,0,,0
+1317,1317,"Rosecrans Avenue and Carmenita Road N/W ",,33.902537,-118.047083,,,0,,0
+1318,1318,"Rosecrans Avenue and Carmenita Road S/E ",,33.902293,-118.046166,,,0,,0
+1319,1319,"Rosecrans Avenue and Castellon Road S/W ",,33.902276,-118.02396,,,0,,0
+1320,1320,"Rosecrans Avenue and Claressa Avenue S/W",,33.902283,-118.048623,,,0,,0
+1321,1321,"Rosecrans Avenue and Clarkdale Avenue N/",,33.902331,-118.080008,,,0,,0
+1322,1322,"Rosecrans Avenue and Clarkdale Avenue S/",,33.902087,-118.079616,,,0,,0
+1323,1323,"Rosecrans Avenue and Dinard Avenue N/E C",,33.90251,-118.050725,,,0,,0
+1324,1324,"Rosecrans Avenue and Dinard Avenue S/W C",,33.902269,-118.051205,,,0,,0
+1325,1325,"Rosecrans Avenue and Dumont Avenue",,33.901967,-118.103526,,,0,,0
+1326,1326,"Rosecrans Avenue and El Espejo Road N/E ",,33.902144,-118.022468,,,0,,0
+1327,1327,"Rosecrans Avenue and Elmcroft Avenue",,33.90224,-118.095907,,,0,,0
+1328,1328,"Rosecrans Avenue and Elmcroft Avenue S/E",,33.902002,-118.09541,,,0,,0
+1329,1329,"Rosecrans Avenue and Figueras Road N/E C",,33.898744,-118.014709,,,0,,0
+1330,1330,"Rosecrans Avenue and Figueras Road S/W C",,33.898635,-118.015256,,,0,,0
+1331,1331,"Rosecrans Avenue opposite Bloomfield Ave",,33.902203,-118.060436,,,0,,0
+1332,1332,"12801 Rosecrans Avenue",,33.902493,-118.0593,,,0,,0
+1333,1333,"Rosecrans Avenue and Flallon Avenue N/W ",,33.902292,-118.085291,,,0,,0
+1334,1334,"Rosecrans Avenue and Flallon Avenue S/W ",,33.902051,-118.085565,,,0,,0
+1335,1335,"Rosecrans Avenue and Grayland Avenue N/E",,33.902357,-118.076069,,,0,,0
+1336,1336,"Rosecrans Avenue and Grayland Avenue S/E",,33.902115,-118.075922,,,0,,0
+1337,1337,"Rosecrans Avenue and Greenstone Avenue N",,33.902476,-118.057539,,,0,,0
+1338,1338,"Rosecrans Avenue and Greenstone Avenue S",,33.902231,-118.057478,,,0,,0
+1339,1339,"Rosecrans Avenue and Harvest Avenue N/E ",,33.902255,-118.091743,,,0,,0
+1340,1340,"Rosecrans Avenue and Harvest Avenue S/W ",,33.90202,-118.092457,,,0,,0
+1341,1341,"Rosecrans Avenue and Helwig Avenue S/W C",,33.90216,-118.069355,,,0,,0
+1342,1342,"Rosecrans Avenue and Jalon Road N/E Corn",,33.898844,-118.006914,,,0,,0
+1343,1343,"Rosecrans Avenue and La Fonda Drive N/E ",,33.899232,-118.000961,,,0,,0
+1344,1344,"Rosecrans Avenue and La Fonda Drive S/W ",,33.89896,-118.001552,,,0,,0
+1345,1345,"Rosecrans Avenue and La Mirada Boulevard",,33.898596,-118.010646,,,0,,0
+1346,1346,"Rosecrans Avenue and La Mirada Boulevard",,33.898377,-118.01034,,,0,,0
+1347,1347,"Rosecrans Avenue at the Masonic Center",,33.902407,-118.069469,,,0,,0
+1348,1348,"Rosecrans Avenue and Marquardt Avenue N/",,33.902593,-118.037461,,,0,,0
+1349,1349,"Rosecrans Avenue and Marquardt Avenue S/",,33.902336,-118.038146,,,0,,0
+1350,1350,"Rosecrans Avenue and Norwalk Boulevard N",,33.902377,-118.073229,,,0,,0
+1351,1351,"Rosecrans Avenue and Norwalk Boulevard S",,33.902143,-118.072676,,,0,,0
+1352,1352,"Rosecrans Avenue and Santa Gertrudes Ave",,33.899003,-117.997035,,,0,,0
+1353,1353,"Rosecrans Avenue and Santa Gertrudes Ave",,33.898753,-117.996977,,,0,,0
+1354,1354,"Rosecrans Avenue and Shoemaker Avenue S/",,33.902246,-118.055693,,,0,,0
+1355,1355,"Rosecrans Avenue and Studebaker Road N/E",,33.902222,-118.099621,,,0,,0
+1356,1356,"Rosecrans Avenue and Studebaker Road S/W",,33.901977,-118.100434,,,0,,0
+1357,1357,"Rosecrans Avenue and Valley View Avenue ",,33.902648,-118.029605,,,0,,0
+1358,1358,"Rosecrans Avenue and Valley View Avenue ",,33.902397,-118.028745,,,0,,0
+1359,1359,"Rosecrans Avenue opposite Dumont Avenue",,33.902203,-118.103679,,,0,,0
+1360,1360,"Ralph's",,33.90228,-118.087991,,,0,,0
+1361,1361,"Rosecrans/Shoemaker",,33.90249,-118.055732,,,0,,0
+1362,1362,"Rush Street and Durfee Avenue",,34.045858,-118.03023,,,0,,0
+1363,1363,"Rush Street and Durfee Avenue",,34.046215,-118.030199,,,0,,0
+1364,1364,"San Antonio Drive and Firestone Boulevar",,33.908903,-118.076259,,,0,,0
+1365,1365,"San Antonio Drive and Foster Road- N/W C",,33.907667,-118.077062,,,0,,0
+1366,1366,"San Antonio Drive and Front Street- N/E ",,33.908794,-118.07599,,,0,,0
+1367,1367,"San Antonio Drive and Olive Street- N/E ",,33.911232,-118.074083,,,0,,0
+1368,1368,"San Antonio Drive and Olive Street- S/W ",,33.910783,-118.074792,,,0,,0
+1369,1369,"Santa Fe Springs Road and Los Nietos Roa",,33.949432,-118.060074,,,0,,0
+1370,1370,"Santa Fe Springs Road and Los Nietos Roa",,33.949879,-118.06004,,,0,,0
+1371,1371,"Santa Fe Springs Road and Mulberry Drive",,33.959058,-118.050368,,,0,,0
+1372,1372,"Santa Fe Springs Road and Slauson Avenue",,33.95857,-118.051269,,,0,,0
+1373,1373,"Santa Gertrudes Avenue and Stanbrook Dri",,33.893773,-117.999668,,,0,,0
+1374,1374,"Shoemaker Avenue and Foster Road",,33.909383,-118.055282,,,0,,0
+1375,1375,"Shoemaker Avenue and Shoemaker Avenue Ct",,33.903336,-118.055465,,,0,,0
+1376,1376,"Shoemaker Avenue and Tom White Way",,33.904941,-118.055241,,,0,,0
+1377,1377,"Shoemaker Avenue and Tom White Way - S/W",,33.904853,-118.055477,,,0,,0
+1378,1378,"Shoemaker Avenue at Golf Course",,33.907612,-118.055498,,,0,,0
+1379,1379,"Shoemaker/Rosecrans",,33.902755,-118.055232,,,0,,0
+1380,1380,"Slauson Avenue and Alburtis Avenue- N/E ",,33.965626,-118.075735,,,0,,0
+1381,1381,"Slauson Avenue and Alburtis Avenue- S/E ",,33.965347,-118.075633,,,0,,0
+1382,1382,"Slauson Avenue and Millergrove Drive- N/",,33.96647,-118.079167,,,0,,0
+1383,1383,"Slauson Avenue and Millergrove Drive- S/",,33.966345,-118.079751,,,0,,0
+1384,1384,"Studebaker Road and 166th Street- N/E Co",,33.880576,-118.099673,,,0,,0
+1385,1385,"Studebaker Road and 166th Street- N/W Co",,33.880465,-118.099968,,,0,,0
+1386,1386,"Studebaker Road and 183rd Street- N/E Co",,33.865974,-118.099513,,,0,,0
+1387,1387,"Studebaker Road and Angell opposite Hosp",,33.912448,-118.099374,,,0,,0
+1388,1388,"Studebaker Road and Artesia Boulevard- N",,33.873343,-118.099575,,,0,,0
+1389,1389,"Studebaker Road and Artesia Boulevard- S",,33.872681,-118.099871,,,0,,0
+1390,1390,"Studebaker Road and Barnwall Street",,33.89133,-118.100092,,,0,,0
+1391,1391,"Studebaker Road and Barnwall Street- N/E",,33.891438,-118.099797,,,0,,0
+1392,1392,"Studebaker Road and Borson Street",,33.914892,-118.09911,,,0,,0
+1393,1393,"Studebaker Road and Coast Plaza Hospital",,33.912581,-118.099096,,,0,,0
+1394,1394,"Studebaker Road and Excelsior Drive- N/E",,33.895067,-118.099832,,,0,,0
+1395,1395,"Studebaker Road and Excelsior Drive- N/W",,33.895017,-118.10012,,,0,,0
+1396,1396,"Studebaker Road and Falcon Way- N/E Corn",,33.884287,-118.099726,,,0,,0
+1397,1397,"Studebaker Road and Foster Road- N/W Cor",,33.910087,-118.09938,,,0,,0
+1398,1398,"Studebaker Road and Foster Road- S/E Cor",,33.909618,-118.099106,,,0,,0
+1399,1399,"Studebaker Road and Imperial Highway",,33.916658,-118.0994,,,0,,0
+1400,1400,"Studebaker Road and Leffingwell Road- N/",,33.906854,-118.099351,,,0,,0
+1401,1401,"Studebaker Road and Leffingwell Road- N/",,33.906732,-118.099689,,,0,,0
+1402,1402,"Studebaker Road and Mapledale Street- N/",,33.898616,-118.099854,,,0,,0
+1403,1403,"Studebaker Road and Mapledale Street- S/",,33.898256,-118.100149,,,0,,0
+1404,1404,"Studebaker Road and Melissa Street- S/W ",,33.883703,-118.100022,,,0,,0
+1405,1405,"Studebaker Road and Rosecrans Avenue- N/",,33.902513,-118.09989,,,0,,0
+1406,1406,"Studebaker Road and Rosecrans Avenue- S/",,33.901793,-118.100168,,,0,,0
+1407,1407,"Studebaker Road and Spinnaker Street- S/",,33.878114,-118.099632,,,0,,0
+1408,1408,"Studebaker/Alondra",,33.888182,-118.099762,,,0,,0
+1409,1409,"StudebakerAlondra",,33.887209,-118.100062,,,0,,0
+1410,1410,"Orr and Day/Telegraph",,33.948458,-118.089126,,,0,,0
+1411,1411,"Telegraph Road and Bloomfield Avenue",,33.941698,-118.064475,,,0,,0
+1412,1412,"Telegraph Road and Bloomfield Avenue - N",,33.941982,-118.064598,,,0,,0
+1413,1413,"Telegraph Road and Greenleaf Avenue",,33.941739,-118.054777,,,0,,0
+1414,1414,"Telegraph Road and Greenleaf Avenue - N/",,33.941989,-118.055636,,,0,,0
+1415,1415,"Telegraph Road and Jersey Avenue",,33.947284,-118.086294,,,0,,0
+1416,1416,"Telegraph Road and Jersey Avenue - N/W C",,33.947427,-118.08597,,,0,,0
+1417,1417,"Telegraph Road and Laurel Avenue - N/W C",,33.941926,-118.048915,,,0,,0
+1418,1418,"Telegraph Road and Painter Avenue",,33.94175,-118.051153,,,0,,0
+1419,1419,"Telegraph Road and Painter Avenue - N/W ",,33.941983,-118.051744,,,0,,0
+1420,1420,"Telegraph Road and Pioneer Boulevard",,33.945542,-118.082063,,,0,,0
+1421,1421,"Telegraph Road and Pioneer Blvd",,33.945565,-118.081306,,,0,,0
+1422,1422,"Telegraph/ Norwalk",,33.942157,-118.073152,,,0,,0
+1423,1423,"Telegraph/Carmenita",,33.940873,-118.047139,,,0,,0
+1424,1424,"Telegraph/Carmenita Road (McDonalds)",,33.941287,-118.048244,,,0,,0
+1425,1425,"Telegraph/Norwalk",,33.941706,-118.072037,,,0,,0
+1426,1426,"Valley Boulevard and Johnson Avenue",,34.071057,-118.03113,,,0,,0
+1427,1427,"Valley Boulevard and Johnson Avenue",,34.071177,-118.030838,,,0,,0
+1428,1428,"Valley Boulevard and Peck Road",,34.069111,-118.028587,,,0,,0
+1429,1429,"Valley Boulevard and Peck Road",,34.06921,-118.028286,,,0,,0
+1430,1430,"Washington Boulevard and Lambert Road",,33.96734,-118.047426,,,0,,0
+1431,1431,"Washington Boulevard and Putnam Street",,33.967902,-118.044261,,,0,,0
+1432,1432,"Washington Boulevard and Putnam Street",,33.968119,-118.044382,,,0,,0
+1433,1433,"Woodruff Avenue and Flora Vista Street- ",,33.882811,-118.117465,,,0,,0
+1434,1434,"Woodruff Avenue and Rosecrans Avenue - S",,33.901358,-118.11678,,,0,,0
+1435,1435,"Woodruff Avenue and Somerset Boulevard-N",,33.896853,-118.116765,,,0,,0
+1436,1436,"Woodruff Avenue and Woodruff Avenue Pl.-",,33.893877,-118.117305,,,0,,0
+1437,1437,"Woodruff/Alondra",,33.889247,-118.116933,,,0,,0
+1438,1438,"Woodruff/Alondra",,33.888694,-118.117516,,,0,,0
+1439,1439,"Workman Mill Road and Cliota Street",,34.013795,-118.045986,,,0,,0
+1440,1440,"Workman Mill Road and E Mission Mill Roa",,34.015126,-118.044077,,,0,,0
+1441,1441,"Workman Mill Road and Mission Mill Road-",,34.01524,-118.044474,,,0,,0
+1442,1442,"Workman Mill Road and Pioneer Boulevard",,34.008424,-118.055082,,,0,,0
+1443,1443,"Workman Mill Road and Pioneer Boulevard-",,34.008522,-118.055366,,,0,,0
+1444,1444,"Workman Mill Road and Rose Hills (Main G",,34.017307,-118.040698,,,0,,0
+1445,1445,"Workman Mill Road and Rose Hills Gate # ",,34.005632,-118.055827,,,0,,0
+1446,1446,"Workman Mill Road and Rose Hills Gate # ",,34.005067,-118.056195,,,0,,0
+1447,1447,"Workman Mill Road and Rose Hills Road- S",,34.013317,-118.04681,,,0,,0
+1448,1448,"Workman Mill Road and Sierra Morena Aven",,34.001353,-118.05599,,,0,,0
+1449,1449,"Workman Mill Road and Spy Glass Hill Roa",,34.011884,-118.047835,,,0,,0
+1451,1451,"Workman Mill Road opposite Rose Hills Ma",,34.016769,-118.04181,,,0,,0
+1452,1452,"Workman Mill Road opposite Sierra Morena",,34.001338,-118.056288,,,0,,0
+1454,1454,"Rio Hondo College SW",,34.019382,-118.038593,,,0,,0
+1455,1455,"Rio Hondo College NE",,34.020126,-118.037554,,,0,,0
