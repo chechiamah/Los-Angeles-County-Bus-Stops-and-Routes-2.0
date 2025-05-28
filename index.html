@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metro Bus Routes Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Appearance -->
+  <style>
+    #map {
+      height: 100vh; /* Full screen height */
+    }
+    
+    /* Legend Styles */
+    .legend {
+      padding: 10px;
+      background: white;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      max-height: 90vh;
+      overflow-y: auto;
+      width: 300px;
+      font-size: 12px;
+    }
+    
+    .legend h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 14px;
+      
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      z-index: 1;
+    }
+    
+    .legend h4 {
+      margin: 8px 0 4px 0;
+      font-size: 10px;
+      color: #0b2590;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 2px;
+    }
+    .legend h5 {
+      margin: 8px 0 4px 0;
+      font-size: 9px;
+      text-align: center;
+      color: #440808;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 2px;
+    }
+    
+    .legend-section {
+      margin-bottom: 10px;
+    }
+    
+    .legend-agency {
+      margin-left: 10px;
+      margin-bottom: 4px;
+    }
+    
+    .legend-service {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+    
+    .legend i {
+      width: 14px;
+      height: 14px;
+      outline: 0.05rem solid;
+      float: left;
+      margin-right: 6px;
+      opacity: 0.7;
+    }
+    
+    .legend .circle {
+      border-radius: 50%;
+      outline: 0.05rem solid;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+  <script>
+    const map = L.map('map').setView([34.05, -118.25], 10);
+
+    // Base layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+
+    //LA County
+    //Credits: https://gist.github.com/ThomasG77/c38e6b0ecfd014342aad 
+    fetch("County_Boundary.geojson").then(res => res.json()).then(data => {
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(map);
+  });
+
+    // Layer groups
+    const metroRoutes = L.layerGroup();
+    const metroStops = L.layerGroup();
+    const bbbRoutes = L.layerGroup();
+    const bbbStops = L.layerGroup();
+    const avtaRoutes = L.layerGroup();
+    const avtaStops = L.layerGroup();
+    const lbtRoutes = L.layerGroup();
+    const lbtStops = L.layerGroup();
+    const fhtRoutes = L.layerGroup();
+    const fhtStops = L.layerGroup();
+    const gbRoutes = L.layerGroup();
+    const gbStops = L.layerGroup();
+    const ttRoutes = L.layerGroup();
+    const ttStops = L.layerGroup();
+    const mbRoutes = L.layerGroup();
+    const mbStops = L.layerGroup();
+    const nwtRoutes = L.layerGroup();
+    const nwtStops = L.layerGroup();
+    const scRoutes = L.layerGroup();
+    const scStops = L.layerGroup();
+
+    
+
+    // Color dictionary
+    const busTypeColors = {
+      "Metro Local and Limited": "#FF6600",
+      "Metro Rapid": "#FF0000",
+      "Metro Express": "#0000FF",
+      "Metro Silver Line": "#9C27B0",
+      "Metro Shuttles and Circulators": "#000000",
+      // "Metro Rail": "#4CAF50",
+      "Other": "#000000"
+    };
+
+    // Metro Stops
+    Papa.parse('metro_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#f0a150",
+              color: "#c76706",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}`);
+            metroStops.addLayer(marker);
+          }
+        });
+        //metroStops.addTo(map);
+      }
+    });
+
+    // Metro Routes
+    fetch('metro_data/Metro_Bus_Lines.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayer = L.geoJSON(data, {
+          style: feature => {
+            const busType = feature.properties.MetroBusType;
+            const color = busTypeColors[busType] || busTypeColors["Other"];
+            return { color, weight: 3, opacity: 0.7 };
+          },
+          onEachFeature: (feature, layer) => {
+            const route = feature.properties.RouteName;
+            const type = feature.properties.MetroBusType;
+            layer.bindPopup(`<strong>${route}</strong><br>Type: ${type}`);
+          }
+        });
+        metroRoutes.addLayer(busLinesLayer);
+        //metroRoutes.addTo(map);
+      });
+
+    // BBB Stops
+    Papa.parse('bbb_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#daf0ff",
+              color: "#007bff",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
+            bbbStops.addLayer(marker);
+          }
+        });
+        //bbbStops.addTo(map);
+      }
+    });
+
+    // BBB Routes
+    fetch('bbb_data/Big Blue Bus.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerBbb = L.geoJSON(data, {
+          style: {
+            color: '#007bff',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeShort = feature.properties.route_short_name;
+            const routeLong = feature.properties.route_long_name;
+            const routeUrl = feature.properties.route_url;
+            layer.bindPopup(`<strong>${routeShort} - ${routeLong}</strong><br><a href="${routeUrl}" target="_blank">Learn more</a>`);
+          }
+        });
+        bbbRoutes.addLayer(busLinesLayerBbb);
+        //bbbRoutes.addTo(map);
+      });
+
+    // AVTA Stops
+    Papa.parse('avta_data/AVTA_stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#008080",
+              color: "#007BA7",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
+            avtaStops.addLayer(marker);
+          }
+        });
+        //avtaStops.addTo(map);
+      }
+    });
+
+    // AVTA Routes
+    fetch('avta_data/AVTA.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerAvta = L.geoJSON(data, {
+          style: {
+            color: '#008080',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeLong = feature.properties.route_long_name;
+            layer.bindPopup(`<strong>AVTA - ${routeLong}</strong>`);
+          }
+        });
+        avtaRoutes.addLayer(busLinesLayerAvta);
+       //avtaRoutes.addTo(map);
+      });
+    // LBT Stops
+    Papa.parse('lbt_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#FF2400",
+              color: "##FFA500",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
+            lbtStops.addLayer(marker);
+          }
+        });
+        //lbtStops.addTo(map);
+      }
+    });
+
+    // LBT Routes
+    fetch('lbt_data/Long Beach Transit.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerLbt = L.geoJSON(data, {
+          style: {
+            color: '#800020',
+            weight: 2,
+            opacity: 0.6
+          },
+          onEachFeature: (feature, layer) => {
+            const routeLong = feature.properties.route_long_name;
+            const routeShort = feature.properties.route_short_name;
+
+            layer.bindPopup(`<strong>Route - ${routeShort} ${routeLong}</strong>`);
+          }
+        });
+        lbtRoutes.addLayer(busLinesLayerLbt);
+        //lbtRoutes.addTo(map);
+      });
+
+    // FHT Stops
+    Papa.parse('fht_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#008080",
+              color: "#007BA7",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
+            fhtStops.addLayer(marker);
+          }
+        });
+        //fhtStops.addTo(map);
+      }
+    });
+
+    // FHT Routes
+    fetch('fht_data/Foothill Transit.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerFht = L.geoJSON(data, {
+          style: {
+            color: '#58ea38',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeLong = feature.properties.route_long_name;
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} - ${routeLong}</strong>`);
+          }
+        });
+        fhtRoutes.addLayer(busLinesLayerFht);
+        //fhtRoutes.addTo(map);
+      });
+
+    // GB Stops
+    Papa.parse('gb_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#FFC0CB",
+              color: "#964B00",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b>`);
+            gbStops.addLayer(marker);
+          }
+        });
+        //gbStops.addTo(map);
+      }
+    });
+
+    // GB Routes
+    fetch('gb_data/Glendale Beeline.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerGb = L.geoJSON(data, {
+          style: {
+            color: '#A52A2A',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeLong = feature.properties.route_long_name;
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} - ${routeLong}</strong>`);
+          }
+        });
+        gbRoutes.addLayer(busLinesLayerGb);
+        //gbRoutes.addTo(map);
+      });
+    // TT Stops
+    Papa.parse('tt_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#FFC300",
+              color: "#964B00",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b>`);
+            ttStops.addLayer(marker);
+          }
+        });
+        //ttStops.addTo(map);
+      }
+    });
+
+    // TT Routes
+    fetch('tt_data/TORRANCE TRANSIT SYSTEM.geojson')
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerTt = L.geoJSON(data, {
+          style: {
+            color: '#A52A2A',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
+          }
+        });
+        ttRoutes.addLayer(busLinesLayerTt);
+        //ttRoutes.addTo(map);
+      });
+
+  // MB Stops
+  Papa.parse('mb_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#FFC300",
+              color: "#0000FF",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b>`);
+            mbStops.addLayer(marker);
+          }
+        });
+        //mbStops.addTo(map);
+      }
+    });
+
+    // MB Routes
+    fetch("mb_data/Montebello Bus Lines.geojson")
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerTt = L.geoJSON(data, {
+          style: {
+            color: '#00008B',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
+          }
+        });
+        mbRoutes.addLayer(busLinesLayerTt);
+        //mbRoutes.addTo(map);
+      });
+
+  // NWT Stops
+  Papa.parse('nwt_data/stops.txt', {
+      download: true,
+      header: true,
+      complete: function(results) {
+        results.data.forEach(stop => {
+          if (stop.stop_lat && stop.stop_lon) {
+            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+              radius: 4,
+              fillColor: "#900C3F" ,
+              color: "#FFFFFF",
+              weight: 1,
+              opacity: 1,
+              fillOpacity: 0.8
+            }).bindPopup(`<b>${stop.stop_name}</b>`);
+            nwtStops.addLayer(marker);
+          }
+        });
+        //nwtStops.addTo(map);
+      }
+    });
+
+    // NWT Routes
+    fetch("nwt_data/Norwalk Transit System.geojson")
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerTt = L.geoJSON(data, {
+          style: {
+            color: '#DB7093',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
+          }
+        });
+        nwtRoutes.addLayer(busLinesLayerTt);
+        //nwtRoutes.addTo(map);
+      });
+
+    // SC Routes
+    fetch("sc_data/Santa_Clarita.geojson")
+      .then(response => response.json())
+      .then(data => {
+        const busLinesLayerTt = L.geoJSON(data, {
+          style: {
+            color: '#B0C4DE',
+            weight: 3,
+            opacity: 0.8
+          },
+          onEachFeature: (feature, layer) => {
+            const routeShort = feature.properties.route_short_name;
+            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
+          }
+        });
+        scRoutes.addLayer(busLinesLayerTt);
+        //scRoutes.addTo(map);
+      });
+
+    // Layer toggle controls
+    const overlayMaps = {
+      "Metro Routes": metroRoutes,
+      "Metro Stops": metroStops,
+      "Big Blue Bus Routes": bbbRoutes,
+      "Big Blue Bus Stops": bbbStops,
+      "Antelope Valley Transit Authority Routes": avtaRoutes,
+      "Antelope Valley Transit Authority Stops": avtaStops,
+      "Long Beach Transit Routes": lbtRoutes, 
+      "Long Beach Transit Stops": lbtStops,
+      "Foothill Transit Routes": fhtRoutes, 
+      "Foothill Transit Stops": fhtStops,
+      "Glendale Beeline Routes": gbRoutes, 
+      "Glendale Beeline Stops": gbStops,
+      "Torrance Transit Routes": ttRoutes, 
+      "Torrance Transit Stops": ttStops,
+      "Montebello Routes": mbRoutes, 
+      "Montebello Transit Stops": mbStops,
+      "Norwalk Transit Routes": nwtRoutes, 
+      "Norwalk Transit Stops": nwtStops,
+      "Santa Clarita Transit Routes": scRoutes, 
+    };
+
+    L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
+    
+    // Create the legend
+    const legend = L.control({position: 'topleft'});
+    
+    legend.onAdd = function(map) {
+      const div = L.DomUtil.create('div', 'legend');
+      
+      div.innerHTML = `
+        <h3>Los Angeles County Transit Agencies</h3>
+        
+        <div class="legend-section">
+          <h5> Check the bus routes and stops to see each line in LA County.</h5>
+          <h4>Metro (Los Angeles County Metropolitan Transportation Authority)</h4>
+          <div class="legend-agency">
+            <div><i style="background: #FF6600"></i> Metro Local/Limited</div>
+            <div><i style="background: #FF0000"></i> Metro Rapid</div>
+            <div><i style="background: #0000FF"></i> Metro Express</div>
+            <div><i style="background: #9C27B0"></i> Metro Silver Line</div>
+    
+            <div><i style="background: #000000"></i> Metro Shuttles and Circulators</div>
+          </div>
+        </div>
+        
+        <div class="legend-section">
+          <h4>Western LA Region</h4>
+          <div class="legend-agency">
+            <div><i style="background: #007bff"></i> Big Blue Bus (Santa Monica)</div>
+            <div class="legend-service"><span class="circle" style="background: #daf0ff"></span> Stops</div>
+          </div>
+        </div>
+        
+        <div class="legend-section">
+          <h4>San Gabriel Valley Region</h4>
+          <div class="legend-agency">
+            <div><i style="background: #58ea38"></i> Foothill Transit</div>
+            <div class="legend-service"><span class="circle" style="background: #008080"></span> Stops</div>
+          </div>
+          <div class="legend-agency">
+            <div><i style="background: #A52A2A"></i> Glendale Beeline</div>
+            <div class="legend-service"><span class="circle" style="background: #FFC0CB"></span> Stops</div>
+          </div>
+          <div class="legend-agency">
+            <div><i style="background: #00008B"></i> Montebello Bus Lines</div>
+            <div class="legend-service"><span class="circle" style="background: #FFC300"></span> Stops</div>
+          </div>
+        </div>
+        
+        <div class="legend-section">
+          <h4>South Bay Region</h4>
+          <div class="legend-agency">
+            <div><i style="background: #800020"></i> Long Beach Transit</div>
+            <div class="legend-service"><span class="circle" style="background: #FF2400"></span> Stops</div>
+          </div>
+          <div class="legend-agency">
+            <div><i style="background: #A52A2A"></i> Torrance Transit</div>
+            <div class="legend-service"><span class="circle" style="background: #FFC300"></span> Stops</div>
+          </div>
+        </div>
+        
+        <div class="legend-section">
+          <h4>North County Region</h4>
+          <div class="legend-agency">
+            <div><i style="background: #B0C4DE"></i> Santa Clarita Transit</div>
+          </div>
+          <div class="legend-agency">
+            <div><i style="background: #DB7093"></i> Norwalk Transit</div>
+            <div class="legend-service"><span class="circle" style="background: #900C3F"></span> Stops</div>
+          </div>
+        </div>
+        
+        <div class="legend-section">
+          <h4>Antelope Valley Region</h4>
+          <div class="legend-agency">
+            <div><i style="background: #008080"></i> Antelope Valley Transit Authority</div>
+            <div class="legend-service"><span class="circle" style="background: #008080"></span> Stops</div>
+          </div>
+        </div>
+      `;
+      
+      return div;
+    };
+    
+    legend.addTo(map);
+  </script>
+</body>
+</html>
