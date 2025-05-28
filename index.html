@@ -150,7 +150,7 @@
     };
 
     // Metro Stops
-    Papa.parse('metro_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/metro_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -172,7 +172,7 @@
     });
 
     // Metro Routes
-    fetch('metro_data/Metro_Bus_Lines.geojson')
+    fetch('gtfs-leaflet-map/metro_data/Metro_Bus_Lines.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayer = L.geoJSON(data, {
@@ -192,7 +192,7 @@
       });
 
     // BBB Stops
-    Papa.parse('bbb_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/bbb_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -214,7 +214,7 @@
     });
 
     // BBB Routes
-    fetch('bbb_data/Big Blue Bus.geojson')
+    fetch('gtfs-leaflet-map/bbb_data/Big Blue Bus.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerBbb = L.geoJSON(data, {
@@ -235,7 +235,7 @@
       });
 
     // AVTA Stops
-    Papa.parse('avta_data/AVTA_stops.txt', {
+    Papa.parse('gtfs-leaflet-map/avta_data/AVTA_stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -257,7 +257,7 @@
     });
 
     // AVTA Routes
-    fetch('avta_data/AVTA.geojson')
+    fetch('gtfs-leaflet-map/avta_data/AVTA.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerAvta = L.geoJSON(data, {
@@ -275,7 +275,7 @@
        //avtaRoutes.addTo(map);
       });
     // LBT Stops
-    Papa.parse('lbt_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/lbt_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -297,7 +297,7 @@
     });
 
     // LBT Routes
-    fetch('lbt_data/Long Beach Transit.geojson')
+    fetch('gtfs-leaflet-map/lbt_data/Long Beach Transit.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerLbt = L.geoJSON(data, {
@@ -318,7 +318,7 @@
       });
 
     // FHT Stops
-    Papa.parse('fht_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/fht_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -340,7 +340,7 @@
     });
 
     // FHT Routes
-    fetch('fht_data/Foothill Transit.geojson')
+    fetch('gtfs-leaflet-map/fht_data/Foothill Transit.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerFht = L.geoJSON(data, {
@@ -360,7 +360,7 @@
       });
 
     // GB Stops
-    Papa.parse('gb_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/gb_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -382,7 +382,7 @@
     });
 
     // GB Routes
-    fetch('gb_data/Glendale Beeline.geojson')
+    fetch('gtfs-leaflet-map/gb_data/Glendale Beeline.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerGb = L.geoJSON(data, {
@@ -401,7 +401,7 @@
         //gbRoutes.addTo(map);
       });
     // TT Stops
-    Papa.parse('tt_data/stops.txt', {
+    Papa.parse('gtfs-leaflet-map/tt_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -423,7 +423,7 @@
     });
 
     // TT Routes
-    fetch('tt_data/TORRANCE TRANSIT SYSTEM.geojson')
+    fetch('gtfs-leaflet-map/tt_data/TORRANCE TRANSIT SYSTEM.geojson')
       .then(response => response.json())
       .then(data => {
         const busLinesLayerTt = L.geoJSON(data, {
@@ -442,7 +442,7 @@
       });
 
   // MB Stops
-  Papa.parse('mb_data/stops.txt', {
+  Papa.parse('gtfs-leaflet-map/mb_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -464,7 +464,7 @@
     });
 
     // MB Routes
-    fetch("mb_data/Montebello Bus Lines.geojson")
+    fetch("gtfs-leaflet-map/mb_data/Montebello Bus Lines.geojson")
       .then(response => response.json())
       .then(data => {
         const busLinesLayerTt = L.geoJSON(data, {
@@ -483,7 +483,7 @@
       });
 
   // NWT Stops
-  Papa.parse('nwt_data/stops.txt', {
+  Papa.parse('gtfs-leaflet-map/nwt_data/stops.txt', {
       download: true,
       header: true,
       complete: function(results) {
@@ -505,7 +505,7 @@
     });
 
     // NWT Routes
-    fetch("nwt_data/Norwalk Transit System.geojson")
+    fetch("gtfs-leaflet-map/nwt_data/Norwalk Transit System.geojson")
       .then(response => response.json())
       .then(data => {
         const busLinesLayerTt = L.geoJSON(data, {
@@ -524,7 +524,7 @@
       });
 
     // SC Routes
-    fetch("sc_data/Santa_Clarita.geojson")
+    fetch("gtfs-leaflet-map/sc_data/Santa_Clarita.geojson")
       .then(response => response.json())
       .then(data => {
         const busLinesLayerTt = L.geoJSON(data, {
