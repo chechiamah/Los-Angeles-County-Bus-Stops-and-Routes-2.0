@@ -109,7 +109,7 @@
 
     //LA County
     //Credits: https://gist.github.com/ThomasG77/c38e6b0ecfd014342aad 
-    fetch("County_Boundary.geojson").then(res => res.json()).then(data => {
+    fetch("gtfs-leaflet-map/County_Boundary.geojson").then(res => res.json()).then(data => {
     // add GeoJSON layer to the map once the file is loaded
     L.geoJson(data).addTo(map);
   });
