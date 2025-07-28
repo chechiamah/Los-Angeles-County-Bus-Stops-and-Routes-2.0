@@ -3,27 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metro Bus Routes Map</title>
+  <title>LA County Bus Routes Map</title>
 
-  <!-- Leaflet CSS -->
+  <!-- LEAFLET CSS-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-  <!-- Appearance -->
+  <!-- APPEARANCE -->
   <style>
-    #map {
-      height: 100vh; /* Full screen height */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
     
-    /* Legend Styles */
+    #map {
+      height: 100vh;
+    }
+    
+    /* LEGEND STYLES */
     .legend {
       padding: 10px;
       background: white;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       border-radius: 5px;
       max-height: 90vh;
       overflow-y: auto;
-      width: 300px;
+      width: 250px;
       font-size: 12px;
     }
     
@@ -32,24 +37,29 @@
       margin-bottom: 10px;
       text-align: center;
       font-size: 14px;
-      
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       padding: 5px;
       z-index: 1;
     }
     
     .legend h4 {
       margin: 8px 0 4px 0;
-      font-size: 10px;
+      font-size: 11px;
       color: #0b2590;
       border-bottom: 1px solid #eee;
       padding-bottom: 2px;
+      cursor: pointer;
     }
+    
+    .legend h4:hover {
+      color: #1a3cb0;
+    }
+    
     .legend h5 {
       margin: 8px 0 4px 0;
-      font-size: 9px;
+      font-size: 10px;
       text-align: center;
       color: #440808;
       border-bottom: 1px solid #eee;
@@ -68,6 +78,7 @@
     .legend-service {
       margin-left: 20px;
       font-size: 12px;
+      display: none;
     }
     
     .legend i {
@@ -87,69 +98,241 @@
       display: inline-block;
       margin-right: 4px;
     }
+    
+    /* LOADING MESSAGE */
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    
+    /*COLLAPSE */
+    .region-collapsed .legend-service {
+      display: none;
+    }
+    
+    /* LAYER CONTROL */
+    .leaflet-control-layers {
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    
+    .leaflet-control-layers-overlays {
+      max-height: 60vh;
+      overflow-y: auto;
+    }
+    
+    .leaflet-control-layers label {
+      padding: 2px 5px;
+    }
+    
+    .leaflet-control-layers label:hover {
+      background-color: #f0f0f0;
+    }
   </style>
 </head>
 <body>
 
+  <!-- LOADING MESSAGE -->
+  <div id="loading" class="loading">Loading map data...</div>
+
   <!-- MAP -->
   <div id="map"></div>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
   <script>
+    // INITIALIZE MAP
     const map = L.map('map').setView([34.05, -118.25], 10);
 
-    // Base layer
+    // BASE LAYER
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
-
-    //LA County
-    //Credits: https://gist.github.com/ThomasG77/c38e6b0ecfd014342aad 
-    fetch("gtfs-leaflet-map/County_Boundary.geojson").then(res => res.json()).then(data => {
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-  });
-
-    // Layer groups
-    const metroRoutes = L.layerGroup();
-    const metroStops = L.layerGroup();
-    const bbbRoutes = L.layerGroup();
-    const bbbStops = L.layerGroup();
-    const avtaRoutes = L.layerGroup();
-    const avtaStops = L.layerGroup();
-    const lbtRoutes = L.layerGroup();
-    const lbtStops = L.layerGroup();
-    const fhtRoutes = L.layerGroup();
-    const fhtStops = L.layerGroup();
-    const gbRoutes = L.layerGroup();
-    const gbStops = L.layerGroup();
-    const ttRoutes = L.layerGroup();
-    const ttStops = L.layerGroup();
-    const mbRoutes = L.layerGroup();
-    const mbStops = L.layerGroup();
-    const nwtRoutes = L.layerGroup();
-    const nwtStops = L.layerGroup();
-    const scRoutes = L.layerGroup();
-    const scStops = L.layerGroup();
-
+    // SHOW LOADING MESSAGE
+    const loadingIndicator = document.getElementById('loading');
     
+    // HIDE LOADING MESSAGE
+    function hideLoading() {
+      loadingIndicator.style.display = 'none';
+    }
+    
+    // SET TIMEOUT FOR LOADING IMAGE
+    setTimeout(hideLoading, 3000);
 
-    // Color dictionary
+    // LA COUNTY BOUNDARY
+    //Credits: https://gist.github.com/ThomasG77/c38e6b0ecfd014342aad 
+    fetch("gtfs-leaflet-map/County_Boundary.geojson")
+      .then(res => res.json())
+      .then(data => {
+        L.geoJson(data).addTo(map);
+      })
+      .catch(err => console.error("Error loading county boundary:", err));
+
+    // COLOR DICTIONARY
     const busTypeColors = {
       "Metro Local and Limited": "#FF6600",
       "Metro Rapid": "#FF0000",
       "Metro Express": "#0000FF",
       "Metro Silver Line": "#9C27B0",
       "Metro Shuttles and Circulators": "#000000",
-      // "Metro Rail": "#4CAF50",
       "Other": "#000000"
     };
 
-    // Metro Stops
+    // CREATE AGENCY LAYERS 
+    function createAgencyLayers(name, routeColor, stopColor, routeGeoJsonUrl, stopsCsvUrl) {
+      const routesLayer = L.layerGroup();
+      const stopsLayer = L.layerGroup();
+      
+      // LOAD ROUTES 
+      fetch(routeGeoJsonUrl)
+        .then(response => response.json())
+        .then(data => {
+          const geoJsonLayer = L.geoJSON(data, {
+            style: {
+              color: routeColor,
+              weight: 3,
+              opacity: 0.8
+            },
+            onEachFeature: (feature, layer) => {
+              const routeShort = feature.properties.route_short_name || '';
+              const routeLong = feature.properties.route_long_name || '';
+              const routeUrl = feature.properties.route_url || '';
+              
+              let popupContent = `<strong>${name}`;
+              if (routeShort) popupContent += ` Route ${routeShort}`;
+              if (routeLong) popupContent += ` - ${routeLong}`;
+              popupContent += `</strong>`;
+              if (routeUrl) popupContent += `<br><a href="${routeUrl}" target="_blank">More info</a>`;
+              
+              layer.bindPopup(popupContent);
+            }
+          });
+          routesLayer.addLayer(geoJsonLayer);
+        })
+        .catch(err => console.error(`Error loading ${name} routes:`, err));
+      
+      // LOAD STOPS
+      Papa.parse(stopsCsvUrl, {
+        download: true,
+        header: true,
+        complete: function(results) {
+          results.data.forEach(stop => {
+            if (stop.stop_lat && stop.stop_lon) {
+              const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
+                radius: 4,
+                fillColor: stopColor.fill || "#FFFFFF",
+                color: stopColor.stroke || "#000000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+              });
+              
+              let popupContent = `<b>${stop.stop_name || 'Stop'}</b>`;
+              if (stop.stop_id) popupContent += `<br>ID: ${stop.stop_id}`;
+              if (stop.stop_desc) popupContent += `<br>${stop.stop_desc}`;
+              
+              marker.bindPopup(popupContent);
+              stopsLayer.addLayer(marker);
+            }
+          });
+        },
+        error: function(err) {
+          console.error(`Error loading ${name} stops:`, err);
+        }
+      });
+      
+      return {
+        routes: routesLayer,
+        stops: stopsLayer,
+        name: name
+      };
+    }
+
+    // CREATE AGENCY LAYERS
+    const agencies = [
+      // Metro (special case due - multiple route types)
+      {
+        name: "Metro",
+        routes: L.layerGroup(),
+        stops: L.layerGroup()
+      },
+      // OTHER AGENCIES
+      createAgencyLayers(
+        "Big Blue Bus",
+        "#007bff",
+        { fill: "#daf0ff", stroke: "#007bff" },
+        "gtfs-leaflet-map/bbb_data/Big Blue Bus.geojson",
+        "gtfs-leaflet-map/bbb_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Antelope Valley Transit",
+        "#008080",
+        { fill: "#008080", stroke: "#007BA7" },
+        "gtfs-leaflet-map/avta_data/AVTA.geojson",
+        "gtfs-leaflet-map/avta_data/AVTA_stops.txt"
+      ),
+      createAgencyLayers(
+        "Long Beach Transit",
+        "#800020",
+        { fill: "#FF2400", stroke: "#FFA500" },
+        "gtfs-leaflet-map/lbt_data/Long Beach Transit.geojson",
+        "gtfs-leaflet-map/lbt_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Foothill Transit",
+        "#58ea38",
+        { fill: "#008080", stroke: "#007BA7" },
+        "gtfs-leaflet-map/fht_data/Foothill Transit.geojson",
+        "gtfs-leaflet-map/fht_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Glendale Beeline",
+        "#A52A2A",
+        { fill: "#FFC0CB", stroke: "#964B00" },
+        "gtfs-leaflet-map/gb_data/Glendale Beeline.geojson",
+        "gtfs-leaflet-map/gb_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Torrance Transit",
+        "#A52A2A",
+        { fill: "#FFC300", stroke: "#964B00" },
+        "gtfs-leaflet-map/tt_data/TORRANCE TRANSIT SYSTEM.geojson",
+        "gtfs-leaflet-map/tt_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Montebello Bus",
+        "#00008B",
+        { fill: "#FFC300", stroke: "#0000FF" },
+        "gtfs-leaflet-map/mb_data/Montebello Bus Lines.geojson",
+        "gtfs-leaflet-map/mb_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Norwalk Transit",
+        "#DB7093",
+        { fill: "#900C3F", stroke: "#FFFFFF" },
+        "gtfs-leaflet-map/nwt_data/Norwalk Transit System.geojson",
+        "gtfs-leaflet-map/nwt_data/stops.txt"
+      ),
+      createAgencyLayers(
+        "Santa Clarita Transit",
+        "#6C7B8C",
+        { fill: "#6C7B8C", stroke: "#4682B4" },
+        "gtfs-leaflet-map/sc_data/Santa_Clarita.geojson",
+        "gtfs-leaflet-map/sc_data/stops.txt"
+      )
+    ];
+
+    // METRO STOPS
     Papa.parse('gtfs-leaflet-map/metro_data/stops.txt', {
       download: true,
       header: true,
@@ -164,14 +347,16 @@
               opacity: 1,
               fillOpacity: 0.8
             }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}`);
-            metroStops.addLayer(marker);
+            agencies[0].stops.addLayer(marker);
           }
         });
-        //metroStops.addTo(map);
+      },
+      error: function(err) {
+        console.error("Error loading Metro stops:", err);
       }
     });
 
-    // Metro Routes
+    // METRO ROUTES
     fetch('gtfs-leaflet-map/metro_data/Metro_Bus_Lines.geojson')
       .then(response => response.json())
       .then(data => {
@@ -187,418 +372,89 @@
             layer.bindPopup(`<strong>${route}</strong><br>Type: ${type}`);
           }
         });
-        metroRoutes.addLayer(busLinesLayer);
-        //metroRoutes.addTo(map);
-      });
+        agencies[0].routes.addLayer(busLinesLayer);
+      })
+      .catch(err => console.error("Error loading Metro routes:", err));
 
-    // BBB Stops
-    Papa.parse('gtfs-leaflet-map/bbb_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#daf0ff",
-              color: "#007bff",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
-            bbbStops.addLayer(marker);
-          }
-        });
-        //bbbStops.addTo(map);
+    // CREATE OVERLAY GROUPS PER REGION
+    const regions = {
+      "Metro": {
+        "Metro Routes": agencies[0].routes,
+        "Metro Stops": agencies[0].stops
+      },
+      "Western LA": {
+        "Big Blue Bus Routes": agencies[1].routes,
+        "Big Blue Bus Stops": agencies[1].stops
+      },
+      "San Gabriel Valley": {
+        "Foothill Transit Routes": agencies[4].routes,
+        "Foothill Transit Stops": agencies[4].stops,
+        "Glendale Beeline Routes": agencies[5].routes,
+        "Glendale Beeline Stops": agencies[5].stops,
+        "Montebello Bus Routes": agencies[7].routes,
+        "Montebello Bus Stops": agencies[7].stops
+      },
+      "South Bay": {
+        "Long Beach Transit Routes": agencies[3].routes,
+        "Long Beach Transit Stops": agencies[3].stops,
+        "Torrance Transit Routes": agencies[6].routes,
+        "Torrance Transit Stops": agencies[6].stops
+      },
+      "North County": {
+        "Santa Clarita Transit Routes": agencies[9].routes,
+        "Santa Clarita Transit Stops": agencies[9].stops,
+        "Norwalk Transit Routes": agencies[8].routes,
+        "Norwalk Transit Stops": agencies[8].stops
+      },
+      "Antelope Valley": {
+        "Antelope Valley Transit Routes": agencies[2].routes,
+        "Antelope Valley Transit Stops": agencies[2].stops
       }
-    });
-
-    // BBB Routes
-    fetch('gtfs-leaflet-map/bbb_data/Big Blue Bus.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerBbb = L.geoJSON(data, {
-          style: {
-            color: '#007bff',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeShort = feature.properties.route_short_name;
-            const routeLong = feature.properties.route_long_name;
-            const routeUrl = feature.properties.route_url;
-            layer.bindPopup(`<strong>${routeShort} - ${routeLong}</strong><br><a href="${routeUrl}" target="_blank">Learn more</a>`);
-          }
-        });
-        bbbRoutes.addLayer(busLinesLayerBbb);
-        //bbbRoutes.addTo(map);
-      });
-
-    // AVTA Stops
-    Papa.parse('gtfs-leaflet-map/avta_data/AVTA_stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#008080",
-              color: "#007BA7",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
-            avtaStops.addLayer(marker);
-          }
-        });
-        //avtaStops.addTo(map);
-      }
-    });
-
-    // AVTA Routes
-    fetch('gtfs-leaflet-map/avta_data/AVTA.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerAvta = L.geoJSON(data, {
-          style: {
-            color: '#008080',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeLong = feature.properties.route_long_name;
-            layer.bindPopup(`<strong>AVTA - ${routeLong}</strong>`);
-          }
-        });
-        avtaRoutes.addLayer(busLinesLayerAvta);
-       //avtaRoutes.addTo(map);
-      });
-    // LBT Stops
-    Papa.parse('gtfs-leaflet-map/lbt_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#FF2400",
-              color: "##FFA500",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
-            lbtStops.addLayer(marker);
-          }
-        });
-        //lbtStops.addTo(map);
-      }
-    });
-
-    // LBT Routes
-    fetch('gtfs-leaflet-map/lbt_data/Long Beach Transit.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerLbt = L.geoJSON(data, {
-          style: {
-            color: '#800020',
-            weight: 2,
-            opacity: 0.6
-          },
-          onEachFeature: (feature, layer) => {
-            const routeLong = feature.properties.route_long_name;
-            const routeShort = feature.properties.route_short_name;
-
-            layer.bindPopup(`<strong>Route - ${routeShort} ${routeLong}</strong>`);
-          }
-        });
-        lbtRoutes.addLayer(busLinesLayerLbt);
-        //lbtRoutes.addTo(map);
-      });
-
-    // FHT Stops
-    Papa.parse('gtfs-leaflet-map/fht_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#008080",
-              color: "#007BA7",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b><br>ID: ${stop.stop_id}<br>${stop.stop_desc}`);
-            fhtStops.addLayer(marker);
-          }
-        });
-        //fhtStops.addTo(map);
-      }
-    });
-
-    // FHT Routes
-    fetch('gtfs-leaflet-map/fht_data/Foothill Transit.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerFht = L.geoJSON(data, {
-          style: {
-            color: '#58ea38',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeLong = feature.properties.route_long_name;
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} - ${routeLong}</strong>`);
-          }
-        });
-        fhtRoutes.addLayer(busLinesLayerFht);
-        //fhtRoutes.addTo(map);
-      });
-
-    // GB Stops
-    Papa.parse('gtfs-leaflet-map/gb_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#FFC0CB",
-              color: "#964B00",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b>`);
-            gbStops.addLayer(marker);
-          }
-        });
-        //gbStops.addTo(map);
-      }
-    });
-
-    // GB Routes
-    fetch('gtfs-leaflet-map/gb_data/Glendale Beeline.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerGb = L.geoJSON(data, {
-          style: {
-            color: '#A52A2A',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeLong = feature.properties.route_long_name;
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} - ${routeLong}</strong>`);
-          }
-        });
-        gbRoutes.addLayer(busLinesLayerGb);
-        //gbRoutes.addTo(map);
-      });
-    // TT Stops
-    Papa.parse('gtfs-leaflet-map/tt_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#FFC300",
-              color: "#964B00",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b>`);
-            ttStops.addLayer(marker);
-          }
-        });
-        //ttStops.addTo(map);
-      }
-    });
-
-    // TT Routes
-    fetch('gtfs-leaflet-map/tt_data/TORRANCE TRANSIT SYSTEM.geojson')
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerTt = L.geoJSON(data, {
-          style: {
-            color: '#A52A2A',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
-          }
-        });
-        ttRoutes.addLayer(busLinesLayerTt);
-        //ttRoutes.addTo(map);
-      });
-
-  // MB Stops
-  Papa.parse('gtfs-leaflet-map/mb_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#FFC300",
-              color: "#0000FF",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b>`);
-            mbStops.addLayer(marker);
-          }
-        });
-        //mbStops.addTo(map);
-      }
-    });
-
-    // MB Routes
-    fetch("gtfs-leaflet-map/mb_data/Montebello Bus Lines.geojson")
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerTt = L.geoJSON(data, {
-          style: {
-            color: '#00008B',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
-          }
-        });
-        mbRoutes.addLayer(busLinesLayerTt);
-        //mbRoutes.addTo(map);
-      });
-
-  // NWT Stops
-  Papa.parse('gtfs-leaflet-map/nwt_data/stops.txt', {
-      download: true,
-      header: true,
-      complete: function(results) {
-        results.data.forEach(stop => {
-          if (stop.stop_lat && stop.stop_lon) {
-            const marker = L.circleMarker([parseFloat(stop.stop_lat), parseFloat(stop.stop_lon)], {
-              radius: 4,
-              fillColor: "#900C3F" ,
-              color: "#FFFFFF",
-              weight: 1,
-              opacity: 1,
-              fillOpacity: 0.8
-            }).bindPopup(`<b>${stop.stop_name}</b>`);
-            nwtStops.addLayer(marker);
-          }
-        });
-        //nwtStops.addTo(map);
-      }
-    });
-
-    // NWT Routes
-    fetch("gtfs-leaflet-map/nwt_data/Norwalk Transit System.geojson")
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerTt = L.geoJSON(data, {
-          style: {
-            color: '#DB7093',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
-          }
-        });
-        nwtRoutes.addLayer(busLinesLayerTt);
-        //nwtRoutes.addTo(map);
-      });
-
-    // SC Routes
-    fetch("gtfs-leaflet-map/sc_data/Santa_Clarita.geojson")
-      .then(response => response.json())
-      .then(data => {
-        const busLinesLayerTt = L.geoJSON(data, {
-          style: {
-            color: '#B0C4DE',
-            weight: 3,
-            opacity: 0.8
-          },
-          onEachFeature: (feature, layer) => {
-            const routeShort = feature.properties.route_short_name;
-            layer.bindPopup(`<strong> Route ${routeShort} </strong>`);
-          }
-        });
-        scRoutes.addLayer(busLinesLayerTt);
-        //scRoutes.addTo(map);
-      });
-
-    // Layer toggle controls
-    const overlayMaps = {
-      "Metro Routes": metroRoutes,
-      "Metro Stops": metroStops,
-      "Big Blue Bus Routes": bbbRoutes,
-      "Big Blue Bus Stops": bbbStops,
-      "Antelope Valley Transit Authority Routes": avtaRoutes,
-      "Antelope Valley Transit Authority Stops": avtaStops,
-      "Long Beach Transit Routes": lbtRoutes, 
-      "Long Beach Transit Stops": lbtStops,
-      "Foothill Transit Routes": fhtRoutes, 
-      "Foothill Transit Stops": fhtStops,
-      "Glendale Beeline Routes": gbRoutes, 
-      "Glendale Beeline Stops": gbStops,
-      "Torrance Transit Routes": ttRoutes, 
-      "Torrance Transit Stops": ttStops,
-      "Montebello Routes": mbRoutes, 
-      "Montebello Transit Stops": mbStops,
-      "Norwalk Transit Routes": nwtRoutes, 
-      "Norwalk Transit Stops": nwtStops,
-      "Santa Clarita Transit Routes": scRoutes, 
     };
 
-    L.control.layers(null, overlayMaps, { collapsed: false }).addTo(map);
-    
-    // Create the legend
+    // COLLAPSIBLE REGIONS
+    const layerControl = L.control.layers(null, null, {
+      collapsed: false,
+      autoZIndex: false
+    }).addTo(map);
+
+    // ADD LAYERS TO CONTROLLED GROUP BY REGION
+    Object.entries(regions).forEach(([regionName, layers]) => {
+      layerControl.addOverlay(L.layerGroup(Object.values(layers)), regionName);
+    });
+
+    // LEGEND
     const legend = L.control({position: 'topleft'});
     
     legend.onAdd = function(map) {
       const div = L.DomUtil.create('div', 'legend');
       
       div.innerHTML = `
-        <h3>Los Angeles County Transit Agencies</h3>
+        <h3>LA County Transit Agencies</h3>
+        <h5>Toggle layers from the control panel</h5>
         
         <div class="legend-section">
-          <h5> Check the bus routes and stops to see each line in LA County.</h5>
-          <h4>Metro (Los Angeles County Metropolitan Transportation Authority)</h4>
+          <h4 onclick="toggleLegendSection(this)">Metro</h4>
           <div class="legend-agency">
-            <div><i style="background: #FF6600"></i> Metro Local/Limited</div>
-            <div><i style="background: #FF0000"></i> Metro Rapid</div>
-            <div><i style="background: #0000FF"></i> Metro Express</div>
-            <div><i style="background: #9C27B0"></i> Metro Silver Line</div>
-    
-            <div><i style="background: #000000"></i> Metro Shuttles and Circulators</div>
+            <div><i style="background: #FF6600"></i> Local/Limited</div>
+            <div><i style="background: #FF0000"></i> Rapid</div>
+            <div><i style="background: #0000FF"></i> Express</div>
+            <div><i style="background: #9C27B0"></i> Silver Line</div>
+            <div><i style="background: #000000"></i> Shuttles</div>
+            <div class="legend-service"><span class="circle" style="background: #f0a150"></span> Stops</div>
           </div>
         </div>
         
         <div class="legend-section">
-          <h4>Western LA Region</h4>
+          <h4 onclick="toggleLegendSection(this)">Western LA</h4>
           <div class="legend-agency">
-            <div><i style="background: #007bff"></i> Big Blue Bus (Santa Monica)</div>
+            <div><i style="background: #007bff"></i> Big Blue Bus</div>
             <div class="legend-service"><span class="circle" style="background: #daf0ff"></span> Stops</div>
           </div>
         </div>
         
         <div class="legend-section">
-          <h4>San Gabriel Valley Region</h4>
+          <h4 onclick="toggleLegendSection(this)">San Gabriel Valley</h4>
           <div class="legend-agency">
             <div><i style="background: #58ea38"></i> Foothill Transit</div>
             <div class="legend-service"><span class="circle" style="background: #008080"></span> Stops</div>
@@ -608,13 +464,13 @@
             <div class="legend-service"><span class="circle" style="background: #FFC0CB"></span> Stops</div>
           </div>
           <div class="legend-agency">
-            <div><i style="background: #00008B"></i> Montebello Bus Lines</div>
+            <div><i style="background: #00008B"></i> Montebello Bus</div>
             <div class="legend-service"><span class="circle" style="background: #FFC300"></span> Stops</div>
           </div>
         </div>
         
         <div class="legend-section">
-          <h4>South Bay Region</h4>
+          <h4 onclick="toggleLegendSection(this)">South Bay</h4>
           <div class="legend-agency">
             <div><i style="background: #800020"></i> Long Beach Transit</div>
             <div class="legend-service"><span class="circle" style="background: #FF2400"></span> Stops</div>
@@ -626,9 +482,10 @@
         </div>
         
         <div class="legend-section">
-          <h4>North County Region</h4>
+          <h4 onclick="toggleLegendSection(this)">North County</h4>
           <div class="legend-agency">
-            <div><i style="background: #B0C4DE"></i> Santa Clarita Transit</div>
+            <div><i style="background: #6C7B8C"></i> Santa Clarita Transit</div>
+            <div class="legend-service"><span class="circle" style="background: #B0C4DE"></span> Stops</div>
           </div>
           <div class="legend-agency">
             <div><i style="background: #DB7093"></i> Norwalk Transit</div>
@@ -637,9 +494,9 @@
         </div>
         
         <div class="legend-section">
-          <h4>Antelope Valley Region</h4>
+          <h4 onclick="toggleLegendSection(this)">Antelope Valley</h4>
           <div class="legend-agency">
-            <div><i style="background: #008080"></i> Antelope Valley Transit Authority</div>
+            <div><i style="background: #008080"></i> Antelope Valley Transit</div>
             <div class="legend-service"><span class="circle" style="background: #008080"></span> Stops</div>
           </div>
         </div>
@@ -649,6 +506,33 @@
     };
     
     legend.addTo(map);
+    
+    // TOGGLE LEGEND SECTIONS
+    window.toggleLegendSection = function(header) {
+      const section = header.parentElement;
+      const services = section.querySelectorAll('.legend-service');
+      
+      services.forEach(service => {
+        service.style.display = service.style.display === 'none' ? 'block' : 'none';
+      });
+      
+      section.classList.toggle('region-collapsed');
+    };
+    
+    // TOGGLED OFF WHEN APP STARTS
+    setTimeout(() => {
+      document.querySelectorAll('.legend h4').forEach(header => {
+        header.click();
+      });
+    }, 100);
+    
+    // HIDE LOADING WHEN ALL LOADED
+    Promise.all(agencies.map(agency => {
+      return new Promise(resolve => {
+        agency.routes.on('add', resolve);
+        agency.stops.on('add', resolve);
+      });
+    })).then(hideLoading);
   </script>
 </body>
 </html>
