@@ -30,6 +30,13 @@
       overflow-y: auto;
       width: 250px;
       font-size: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .legend.collapsed {
+      max-height: 40px;
+      overflow: hidden;
+      width: 200px;
     }
     
     .legend h3 {
@@ -42,6 +49,19 @@
       background: rgba(255, 255, 255, 0.95);
       padding: 5px;
       z-index: 1;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .legend h3::after {
+      content: '−';
+      font-weight: bold;
+    }
+    
+    .legend.collapsed h3::after {
+      content: '+';
     }
     
     .legend h4 {
@@ -51,6 +71,19 @@
       border-bottom: 1px solid #eee;
       padding-bottom: 2px;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .legend h4::after {
+      content: '−';
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    .legend h4.collapsed::after {
+      content: '+';
     }
     
     .legend h4:hover {
@@ -112,15 +145,35 @@
       z-index: 1000;
     }
     
-    /*COLLAPSE */
-    .region-collapsed .legend-service {
-      display: none;
-    }
-    
     /* LAYER CONTROL */
     .leaflet-control-layers {
       max-height: 70vh;
       overflow-y: auto;
+      transition: all 0.3s ease;
+    }
+    
+    .leaflet-control-layers.collapsed {
+      max-height: 30px;
+      overflow: hidden;
+      width: 30px;
+    }
+    
+    .leaflet-control-layers-toggle {
+      width: 30px;
+      height: 30px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgNkgxTTMgMTJIMU0zIDE4SDFNOCA2SDIxTTggMTJIMjFNOCAxOEgyMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');
+      background-size: 20px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .leaflet-control-layers-expanded {
+      padding: 6px 10px 6px 6px;
+      transition: all 0.3s ease;
+    }
+    
+    .leaflet-control-layers.collapsed .leaflet-control-layers-expanded {
+      display: none;
     }
     
     .leaflet-control-layers-overlays {
@@ -135,12 +188,79 @@
     .leaflet-control-layers label:hover {
       background-color: #f0f0f0;
     }
+    
+    /* USER PROMPT */
+    .user-prompt {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      max-width: 250px;
+      font-size: 12px;
+      display: none;
+    }
+    
+    .user-prompt.show {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+    
+    .user-prompt .close {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .prompt-arrow {
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+    
+    .prompt-arrow-left {
+      border-width: 10px 10px 10px 0;
+      border-color: transparent rgba(255, 255, 255, 0.95) transparent transparent;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    .prompt-arrow-top {
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent rgba(255, 255, 255, 0.95) transparent;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   </style>
 </head>
 <body>
 
   <!-- LOADING MESSAGE -->
   <div id="loading" class="loading">Loading map data...</div>
+
+  <!-- USER PROMPT -->
+  <div id="layerPrompt" class="user-prompt">
+    <span class="close" onclick="this.parentElement.style.display='none'">×</span>
+    <div class="prompt-arrow prompt-arrow-left"></div>
+    <strong>Tip:</strong> Click the layers button (<span style="display:inline-block;width:20px;height:20px;background-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgNkgxTTMgMTJIMU0zIDE4SDFNOCA2SDIxTTggMTJIMjFNOCAxOEgyMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K');background-size:contain;"></span>) to toggle bus routes and stops.
+  </div>
+  
+  <div id="legendPrompt" class="user-prompt">
+    <span class="close" onclick="this.parentElement.style.display='none'">×</span>
+    <div class="prompt-arrow prompt-arrow-top"></div>
+    <strong>Tip:</strong> Click on the legend headers to expand/collapse sections and see route colors.
+  </div>
 
   <!-- MAP -->
   <div id="map"></div>
@@ -412,25 +532,111 @@
       }
     };
 
-    // COLLAPSIBLE REGIONS
-    const layerControl = L.control.layers(null, null, {
-      collapsed: false,
-      autoZIndex: false
-    }).addTo(map);
-
-    // ADD LAYERS TO CONTROLLED GROUP BY REGION
-    Object.entries(regions).forEach(([regionName, layers]) => {
-      layerControl.addOverlay(L.layerGroup(Object.values(layers)), regionName);
+    // CUSTOM LAYER CONTROL WITH COLLAPSE FUNCTIONALITY
+    const LayerControl = L.Control.extend({
+      options: {
+        position: 'topright',
+        collapsed: true
+      },
+      
+      onAdd: function(map) {
+        this._map = map;
+        
+        // Create container
+        this._container = L.DomUtil.create('div', 'leaflet-control-layers collapsed');
+        
+        // Create toggle button
+        this._toggleButton = L.DomUtil.create('a', 'leaflet-control-layers-toggle', this._container);
+        this._toggleButton.href = '#';
+        this._toggleButton.title = 'Layers';
+        
+        // Create expanded section
+        this._section = L.DomUtil.create('section', 'leaflet-control-layers-expanded', this._container);
+        
+        // Add layers
+        this._addLayers();
+        
+        // Add event listeners
+        L.DomEvent.on(this._toggleButton, 'click', this._toggle, this);
+        
+        // Prevent map events when interacting with control
+        L.DomEvent.disableClickPropagation(this._container);
+        L.DomEvent.disableScrollPropagation(this._container);
+        
+        return this._container;
+      },
+      
+      _addLayers: function() {
+        // Add header
+        const header = L.DomUtil.create('h4', '', this._section);
+        header.innerHTML = 'Bus Routes & Stops';
+        
+        // Add overlays container
+        const overlays = L.DomUtil.create('div', 'leaflet-control-layers-overlays', this._section);
+        
+        // Add regions and their layers
+        Object.entries(regions).forEach(([regionName, layers]) => {
+          const regionDiv = L.DomUtil.create('div', '', overlays);
+          const regionHeader = L.DomUtil.create('strong', '', regionDiv);
+          regionHeader.innerHTML = regionName;
+          regionHeader.style.cursor = 'pointer';
+          regionHeader.onclick = () => this._toggleRegion(regionDiv);
+          
+          const regionLayersDiv = L.DomUtil.create('div', '', regionDiv);
+          regionLayersDiv.style.marginLeft = '10px';
+          regionLayersDiv.style.display = 'none'; // Start collapsed
+          
+          Object.entries(layers).forEach(([layerName, layer]) => {
+            const label = L.DomUtil.create('label', '', regionLayersDiv);
+            const input = L.DomUtil.create('input', '', label);
+            input.type = 'checkbox';
+            input.checked = false;
+            input.onchange = () => {
+              if (input.checked) {
+                map.addLayer(layer);
+              } else {
+                map.removeLayer(layer);
+              }
+            };
+            
+            const span = L.DomUtil.create('span', '', label);
+            span.innerHTML = layerName;
+          });
+        });
+      },
+      
+      _toggle: function() {
+        if (this._container.classList.contains('collapsed')) {
+          this._container.classList.remove('collapsed');
+          // Show layer prompt when expanding
+          document.getElementById('layerPrompt').classList.remove('show');
+        } else {
+          this._container.classList.add('collapsed');
+        }
+      },
+      
+      _toggleRegion: function(regionDiv) {
+        const layersDiv = regionDiv.querySelector('div');
+        if (layersDiv.style.display === 'none') {
+          layersDiv.style.display = 'block';
+        } else {
+          layersDiv.style.display = 'none';
+        }
+      }
     });
+    
+    // Add custom layer control to map
+    const layerControl = new LayerControl();
+    map.addControl(layerControl);
 
     // LEGEND
     const legend = L.control({position: 'topleft'});
     
     legend.onAdd = function(map) {
-      const div = L.DomUtil.create('div', 'legend');
+      const div = L.DomUtil.create('div', 'legend collapsed');
       
       div.innerHTML = `
-        <h3>LA County Transit Agencies</h3>
+        <h3 onclick="toggleLegend()">LA County Transit Agencies</h3>
         <h5>Toggle layers from the control panel</h5>
         
         <div class="legend-section">
@@ -507,24 +713,39 @@
     
     legend.addTo(map);
     
+    // TOGGLE LEGEND
+    window.toggleLegend = function() {
+      const legendDiv = document.querySelector('.legend');
+      legendDiv.classList.toggle('collapsed');
+      
+      // Show legend prompt when expanding
+      if (!legendDiv.classList.contains('collapsed')) {
+        document.getElementById('legendPrompt').classList.add('show');
+      } else {
+        document.getElementById('legendPrompt').classList.remove('show');
+      }
+    };
+    
     // TOGGLE LEGEND SECTIONS
     window.toggleLegendSection = function(header) {
-      const section = header.parentElement;
-      const services = section.querySelectorAll('.legend-service');
+      header.classList.toggle('collapsed');
+      const services = header.parentElement.querySelectorAll('.legend-service');
       
       services.forEach(service => {
         service.style.display = service.style.display === 'none' ? 'block' : 'none';
       });
-      
-      section.classList.toggle('region-collapsed');
     };
     
-    // TOGGLED OFF WHEN APP STARTS
+    // SHOW INITIAL PROMPTS
     setTimeout(() => {
+      document.getElementById('layerPrompt').classList.add('show');
+      document.getElementById('legendPrompt').classList.add('show');
+      
+      // Auto-collapse all legend sections
       document.querySelectorAll('.legend h4').forEach(header => {
         header.click();
       });
-    }, 100);
+    }, 2000);
     
     // HIDE LOADING WHEN ALL LOADED
     Promise.all(agencies.map(agency => {
