@@ -242,6 +242,31 @@
       left: 50%;
       transform: translateX(-50%);
     }
+
+  /* CONTACT INFO STYLES */
+  #contactInfo {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 200px;
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  #contactInfo a {
+    color: #0b2590;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  #contactInfo a:hover {
+    text-decoration: underline;
+    color: #1a3cb0;
+  }
   </style>
 </head>
 <body>
@@ -261,6 +286,13 @@
     <div class="prompt-arrow prompt-arrow-top"></div>
     <strong>Tip:</strong> Click on the legend headers to expand/collapse sections and see route colors.
   </div>
+
+  <!-- CONTACT INFORMATION -->
+<div id="contactInfo" class="user-prompt" style="bottom: 10px; left: 10px; top: auto; right: auto; display: block;">
+  <strong>Contact:</strong><br>
+  <a href="mailto:thechechiamah@gmail.com">Email</a> | 
+  <a href="https://www.linkedin.com/in/chechiamah" target="_blank">LinkedIn</a>
+</div>
 
   <!-- MAP -->
   <div id="map"></div>
